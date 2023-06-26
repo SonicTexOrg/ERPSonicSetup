@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0006PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ItemCategoryVO1" RangeSize="25" DataControl="AppModuleDataControl" id="ItemCategoryVO1Iterator"/>
+    <searchRegion Binds="ItemCategoryVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ItemCategoryVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ItemCategoryVO1Iterator" id="ItemCatId">
+      <AttrNames>
+        <Item Value="ItemCatId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ItemCategoryVO1Iterator" id="ItemCatDesc">
+      <AttrNames>
+        <Item Value="ItemCatDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="ItemCategoryVO1Iterator" StaticList="false" Uses="LOVItemCatActive" id="Active"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="ItemCategoryVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ItemCategoryVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ItemCategoryVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ItemCategoryVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ItemCategoryVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ItemCategoryVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="ItemCategoryVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ItemCategoryVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="ItemCategoryVO1Iterator" id="ItemCategoryVO1">
+      <nodeDefinition DefName="STP.model.vo.ItemCategoryVO" Name="ItemCategoryVO10">
+        <AttrNames>
+          <Item Value="ItemCatId"/>
+          <Item Value="ItemCatDesc"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+          <Item Value="LastEditedBy"/>
+          <Item Value="LastEditedOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

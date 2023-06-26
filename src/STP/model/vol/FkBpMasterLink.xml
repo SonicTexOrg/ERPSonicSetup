@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkBpMasterLink"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  EntityAssociation="STP.model.asso.FkBpMasterAssoc">
+  <ViewLinkDefEnd
+    Name="BpFrefixVO"
+    Cardinality="1"
+    Source="true"
+    Owner="STP.model.vo.BpFrefixVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="BpFrefixVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.vo.BpFrefixVO.BpfId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="BpMasterVO"
+    Cardinality="-1"
+    Owner="STP.model.vo.BpMasterVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="BpMasterVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.vo.BpMasterVO.BpfId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

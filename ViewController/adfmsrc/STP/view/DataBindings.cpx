@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.8" id="DataBindings"
+             SeparateXMLFiles="false" Package="STP.view" ClientType="Generic">
+  <pageMap>
+    <page path="/STP_0001.jsf" usageId="STP_view_STP_0001PageDef"/>
+    <page path="/STP_0002.jsf" usageId="STP_view_STP_0002PageDef"/>
+    <page path="/STP_0003.jsf" usageId="STP_view_STP_0003PageDef"/>
+    <page path="/STP_0004.jsf" usageId="STP_view_STP_0004PageDef"/>
+    <page path="/STP_0005.jsf" usageId="STP_view_STP_0005PageDef"/>
+    <page path="/STP_0006.jsf" usageId="STP_view_STP_0006PageDef"/>
+    <page path="/STP_0007.jsf" usageId="STP_view_STP_0007PageDef"/>
+    <page path="/STP_0008.jsf" usageId="STP_view_STP_0008PageDef"/>
+    <page path="/STP_0009.jsf" usageId="STP_view_STP_0009PageDef"/>
+    <page path="/STP_0010.jsf" usageId="STP_view_STP_0010PageDef"/>
+    <page path="/STP_0011.jsf" usageId="STP_view_STP_0011PageDef"/>
+    <page path="/STP_0012.jsf" usageId="STP_view_STP_0012PageDef"/>
+    <page path="/untitled1.jsff" usageId="STP_view_untitled1PageDef"/>
+    <page path="/untitled1.jsf" usageId="STP_view_untitled1PageDef1"/>
+    <page path="/STP_0013.jsf" usageId="STP_view_STP_0013PageDef"/>
+    <page path="/STP_0014.jsf" usageId="STP_view_STP_0014PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="STP_view_STP_0001PageDef" path="STP.view.pageDefs.STP_0001PageDef"/>
+    <page id="STP_view_STP_0002PageDef" path="STP.view.pageDefs.STP_0002PageDef"/>
+    <page id="STP_view_STP_0003PageDef" path="STP.view.pageDefs.STP_0003PageDef"/>
+    <page id="STP_view_STP_0004PageDef" path="STP.view.pageDefs.STP_0004PageDef"/>
+    <page id="STP_view_STP_0005PageDef" path="STP.view.pageDefs.STP_0005PageDef"/>
+    <page id="STP_view_STP_0006PageDef" path="STP.view.pageDefs.STP_0006PageDef"/>
+    <page id="STP_view_STP_0007PageDef" path="STP.view.pageDefs.STP_0007PageDef"/>
+    <page id="STP_view_STP_0008PageDef" path="STP.view.pageDefs.STP_0008PageDef"/>
+    <page id="STP_view_STP_0009PageDef" path="STP.view.pageDefs.STP_0009PageDef"/>
+    <page id="STP_view_STP_0010PageDef" path="STP.view.pageDefs.STP_0010PageDef"/>
+    <page id="STP_view_STP_0011PageDef" path="STP.view.pageDefs.STP_0011PageDef"/>
+    <page id="STP_view_STP_0012PageDef" path="STP.view.pageDefs.STP_0012PageDef"/>
+    <page id="STP_view_untitled1PageDef" path="STP.view.pageDefs.untitled1PageDef"/>
+    <page id="STP_view_untitled1PageDef1" path="STP.view.pageDefs.untitled1PageDef1"/>
+    <page id="STP_view_STP_0013PageDef" path="STP.view.pageDefs.STP_0013PageDef"/>
+    <page id="STP_view_STP_0014PageDef" path="STP.view.pageDefs.STP_0014PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="STP.model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

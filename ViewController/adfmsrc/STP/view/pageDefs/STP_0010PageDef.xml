@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0010PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FabMasterVO1" RangeSize="25" DataControl="AppModuleDataControl" id="FabMasterVO1Iterator"/>
+    <iterator Binds="FabDetailVO2" RangeSize="25" DataControl="AppModuleDataControl" id="FabDetailVO2Iterator"/>
+    <searchRegion Binds="FabDetailVO2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="FabDetailVO2Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="FabMasterVO1Iterator" id="FabId">
+      <AttrNames>
+        <Item Value="FabId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="FabMasterVO1Iterator" StaticList="false" Uses="LOVFabMasterFabTypeId" id="FabTypeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="FabMasterVO1Iterator" id="FabNo">
+      <AttrNames>
+        <Item Value="FabNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FabMasterVO1Iterator" id="FabName">
+      <AttrNames>
+        <Item Value="FabName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FabMasterVO1Iterator" id="KnitWaste">
+      <AttrNames>
+        <Item Value="KnitWaste"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FabMasterVO1Iterator" id="DyeWaste">
+      <AttrNames>
+        <Item Value="DyeWaste"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FabMasterVO1Iterator" id="PrintWaste">
+      <AttrNames>
+        <Item Value="PrintWaste"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FabMasterVO1Iterator" id="CuttingWaste">
+      <AttrNames>
+        <Item Value="CuttingWaste"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FabMasterVO1Iterator" id="ProdWaste">
+      <AttrNames>
+        <Item Value="ProdWaste"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FabMasterVO1Iterator" id="OtherWaste">
+      <AttrNames>
+        <Item Value="OtherWaste"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="FabMasterVO1Iterator" StaticList="false" Uses="LOVFabMasterActive" id="Active"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="FabMasterVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FabMasterVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="FabMasterVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="FabMasterVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="FabMasterVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="FabMasterVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="FabMasterVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="FabMasterVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="FabDetailVO2Iterator" id="FabDetailVO2">
+      <nodeDefinition DefName="STP.model.vo.FabDetailVO" Name="FabDetailVO20">
+        <AttrNames>
+          <Item Value="ItemId"/>
+          <Item Value="Percentage"/>
+          <Item Value="Remarks"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="FabDetailVO2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="FabDetailVO2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

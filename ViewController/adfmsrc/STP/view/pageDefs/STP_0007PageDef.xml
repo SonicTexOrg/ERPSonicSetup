@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0007PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MachineVO1" RangeSize="25" DataControl="AppModuleDataControl" id="MachineVO1Iterator"/>
+    <searchRegion Binds="MachineVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MachineVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="MachineVO1Iterator" id="MachineId">
+      <AttrNames>
+        <Item Value="MachineId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MachineVO1Iterator" id="MachineName">
+      <AttrNames>
+        <Item Value="MachineName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MachineVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MachineVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="MachineVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="MachineVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="MachineVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="MachineVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="MachineVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="MachineVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="MachineVO1Iterator" id="MachineVO1">
+      <nodeDefinition DefName="STP.model.vo.MachineVO" Name="MachineVO10">
+        <AttrNames>
+          <Item Value="MachineId"/>
+          <Item Value="MachineName"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+          <Item Value="LastEditedBy"/>
+          <Item Value="LastEditedOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

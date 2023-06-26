@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ItemCategoryVO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="ItemCatActiveYesNoLOV"
+    ViewObjectName="STP.model.lov.ActiveYesNoLOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOVItemCatActive"
+    ListVOName="ItemCatActiveYesNoLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Active"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CHKBoxActiveYesNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CHKBoxActiveYesNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="ItemCategoryEO"
+    Entity="STP.model.eo.ItemCategoryEO"/>
+  <ViewAttribute
+    Name="ItemCatId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemCatId"
+    EntityUsage="ItemCategoryEO"
+    AliasName="ITEM_CAT_ID"/>
+  <ViewAttribute
+    Name="ItemCatDesc"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemCatDesc"
+    EntityUsage="ItemCategoryEO"
+    AliasName="ITEM_CAT_DESC"/>
+  <ViewAttribute
+    Name="Active"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Active"
+    EntityUsage="ItemCategoryEO"
+    AliasName="ACTIVE"
+    LOVName="LOVItemCatActive">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="check_box"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EnteredBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EnteredBy"
+    EntityUsage="ItemCategoryEO"
+    AliasName="ENTERED_BY"/>
+  <ViewAttribute
+    Name="EnteredOn"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EnteredOn"
+    EntityUsage="ItemCategoryEO"
+    AliasName="ENTERED_ON"/>
+  <ViewAttribute
+    Name="LastEditedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastEditedBy"
+    EntityUsage="ItemCategoryEO"
+    AliasName="LAST_EDITED_BY"/>
+  <ViewAttribute
+    Name="LastEditedOn"
+    PrecisionRule="true"
+    EntityAttrName="LastEditedOn"
+    EntityUsage="ItemCategoryEO"
+    AliasName="LAST_EDITED_ON"/>
+  <ViewLinkAccessor
+    Name="ItemMasterVO"
+    ViewLink="STP.model.vol.Fk1ItemMasterLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0001PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ColorsVO1" RangeSize="25" DataControl="AppModuleDataControl" id="ColorsVO1Iterator"/>
+    <searchRegion Binds="ColorsVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ColorsVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ColorsVO1Iterator" id="ColorId">
+      <AttrNames>
+        <Item Value="ColorId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ColorsVO1Iterator" id="ColorName">
+      <AttrNames>
+        <Item Value="ColorName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ColorsVO1Iterator" id="ColorDetail">
+      <AttrNames>
+        <Item Value="ColorDetail"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="ColorsVO1Iterator" StaticList="false" Uses="LOVColorsActive" id="Active" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="ColorsVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ColorsVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ColorsVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ColorsVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ColorsVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ColorsVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="ColorsVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="ColorsVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="ColorsVO1Iterator" id="ColorsVO1">
+      <nodeDefinition DefName="STP.model.vo.ColorsVO1" Name="ColorsVO10">
+        <AttrNames>
+          <Item Value="ColorId"/>
+          <Item Value="ColorName"/>
+          <Item Value="ColorDetail"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

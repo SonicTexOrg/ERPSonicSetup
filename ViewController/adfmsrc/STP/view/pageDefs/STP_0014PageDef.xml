@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0014PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ContractorTypeVO1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ContractorTypeVO1Iterator"/>
+    <searchRegion Binds="ContractorTypeVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ContractorTypeVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ContractorTypeVO1Iterator" id="ContractorTypeId">
+      <AttrNames>
+        <Item Value="ContractorTypeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContractorTypeVO1Iterator" id="ContractorType">
+      <AttrNames>
+        <Item Value="ContractorType"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="ContractorTypeVO1Iterator" StaticList="false" Uses="LOVContractorTypeActive" id="Active"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="ContractorTypeVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContractorTypeVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ContractorTypeVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ContractorTypeVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ContractorTypeVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ContractorTypeVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="ContractorTypeVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ContractorTypeVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="ContractorTypeVO1Iterator" id="ContractorTypeVO1">
+      <nodeDefinition DefName="STP.model.vo.ContractorTypeVO" Name="ContractorTypeVO10">
+        <AttrNames>
+          <Item Value="ContractorTypeId"/>
+          <Item Value="ContractorType"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

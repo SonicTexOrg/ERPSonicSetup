@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="STP_0005.jsf" id="d1" inlineStyle="background-color:Teal;">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelHeader text="Item Type Master Setup" id="ph1">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+                <af:panelSplitter id="ps1" orientation="vertical">
+                    <f:facet name="first">
+                        <af:panelBox text="Item Type Setup" id="pb1">
+                            <f:facet name="toolbar">
+                                <af:toolbar id="t1">
+                                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="New"
+                                               disabled="#{!bindings.CreateInsert.enabled}" id="b5"/>
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b7"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b8">
+                                        <af:resetActionListener/>
+                                    </af:button>
+                                    <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                               disabled="#{!bindings.Delete.enabled}" id="b6"/>
+                                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                                               disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                    <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                               disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                </af:toolbar>
+                            </f:facet>
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.ItemTypeId.inputValue}"
+                                              label="#{bindings.ItemTypeId.hints.label}"
+                                              required="#{bindings.ItemTypeId.hints.mandatory}"
+                                              columns="#{bindings.ItemTypeId.hints.displayWidth}"
+                                              maximumLength="#{bindings.ItemTypeId.hints.precision}"
+                                              shortDesc="#{bindings.ItemTypeId.hints.tooltip}" id="it1" disabled="true">
+                                    <f:validator binding="#{bindings.ItemTypeId.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.ItemTypeId.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.ItemTypePrefix.inputValue}"
+                                              label="#{bindings.ItemTypePrefix.hints.label}"
+                                              required="#{bindings.ItemTypePrefix.hints.mandatory}"
+                                              columns="#{bindings.ItemTypePrefix.hints.displayWidth}"
+                                              maximumLength="#{bindings.ItemTypePrefix.hints.precision}"
+                                              shortDesc="#{bindings.ItemTypePrefix.hints.tooltip}" id="it2">
+                                    <f:validator binding="#{bindings.ItemTypePrefix.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.ItemTypeDesc.inputValue}"
+                                              label="#{bindings.ItemTypeDesc.hints.label}"
+                                              required="#{bindings.ItemTypeDesc.hints.mandatory}"
+                                              columns="#{bindings.ItemTypeDesc.hints.displayWidth}"
+                                              maximumLength="#{bindings.ItemTypeDesc.hints.precision}"
+                                              shortDesc="#{bindings.ItemTypeDesc.hints.tooltip}" id="it3">
+                                    <f:validator binding="#{bindings.ItemTypeDesc.validator}"/>
+                                </af:inputText>
+                                <af:selectBooleanCheckbox value="#{bindings.Active.inputValue}"
+                                                          label="#{bindings.Active.label}"
+                                                          shortDesc="#{bindings.Active.hints.tooltip}" id="sbc1"/>
+                                <af:inputText value="#{bindings.EnteredBy.inputValue}"
+                                              label="#{bindings.EnteredBy.hints.label}"
+                                              required="#{bindings.EnteredBy.hints.mandatory}"
+                                              columns="#{bindings.EnteredBy.hints.displayWidth}"
+                                              maximumLength="#{bindings.EnteredBy.hints.precision}"
+                                              shortDesc="#{bindings.EnteredBy.hints.tooltip}" id="it4">
+                                    <f:validator binding="#{bindings.EnteredBy.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EnteredBy.format}"/>
+                                </af:inputText>
+                                <af:inputDate value="#{bindings.EnteredOn.inputValue}"
+                                              label="#{bindings.EnteredOn.hints.label}"
+                                              required="#{bindings.EnteredOn.hints.mandatory}"
+                                              columns="#{bindings.EnteredOn.hints.displayWidth}"
+                                              shortDesc="#{bindings.EnteredOn.hints.tooltip}" id="id1">
+                                    <f:validator binding="#{bindings.EnteredOn.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.EnteredOn.format}"/>
+                                </af:inputDate>
+                                <f:facet name="footer">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl1"/>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </af:panelBox>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="statusbar"/>
+                            <af:table value="#{bindings.ItemTypeVO1.collectionModel}" var="row"
+                                      rows="#{bindings.ItemTypeVO1.rangeSize}"
+                                      emptyText="#{bindings.ItemTypeVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.ItemTypeVO1.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.ItemTypeVO1.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.ItemTypeVO1.rangeSize}"
+                                      filterModel="#{bindings.ItemTypeVO1Query.queryDescriptor}"
+                                      queryListener="#{bindings.ItemTypeVO1Query.processQuery}" filterVisible="true"
+                                      varStatus="vs" id="t2"
+                                      partialTriggers="::b5 ::b6 ::b1 ::b2 ::b4 ::b3 :::b5 :::b6 :::b1 :::b2 :::b4 :::b3">
+                                <af:column sortProperty="#{bindings.ItemTypeVO1.hints.ItemTypeId.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ItemTypeVO1.hints.ItemTypeId.label}" id="c1">
+                                    <af:outputText value="#{row.ItemTypeId}"
+                                                   shortDesc="#{bindings.ItemTypeVO1.hints.ItemTypeId.tooltip}"
+                                                   id="ot1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ItemTypeVO1.hints.ItemTypeId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ItemTypeVO1.hints.ItemTypePrefix.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ItemTypeVO1.hints.ItemTypePrefix.label}" id="c2">
+                                    <af:outputText value="#{row.ItemTypePrefix}"
+                                                   shortDesc="#{bindings.ItemTypeVO1.hints.ItemTypePrefix.tooltip}"
+                                                   id="ot2"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ItemTypeVO1.hints.ItemTypeDesc.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ItemTypeVO1.hints.ItemTypeDesc.label}" id="c3">
+                                    <af:outputText value="#{row.ItemTypeDesc}"
+                                                   shortDesc="#{bindings.ItemTypeVO1.hints.ItemTypeDesc.tooltip}"
+                                                   id="ot3"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ItemTypeVO1.hints.Active.name}" filterable="true"
+                                           sortable="true" headerText="#{bindings.ItemTypeVO1.hints.Active.label}"
+                                           id="c4">
+                                    <af:selectOneChoice value="#{row.bindings.Active.inputValue}"
+                                                        label="#{row.bindings.Active.label}"
+                                                        required="#{bindings.ItemTypeVO1.hints.Active.mandatory}"
+                                                        shortDesc="#{bindings.ItemTypeVO1.hints.Active.tooltip}"
+                                                        readOnly="true" id="soc1">
+                                        <f:selectItems value="#{row.bindings.Active.items}" id="si1"/>
+                                        <f:validator binding="#{row.bindings.Active.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ItemTypeVO1.hints.EnteredBy.name}" filterable="true"
+                                           sortable="true" headerText="#{bindings.ItemTypeVO1.hints.EnteredBy.label}"
+                                           id="c5">
+                                    <af:outputText value="#{row.EnteredBy}"
+                                                   shortDesc="#{bindings.ItemTypeVO1.hints.EnteredBy.tooltip}" id="ot4">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ItemTypeVO1.hints.EnteredBy.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ItemTypeVO1.hints.EnteredOn.name}" filterable="true"
+                                           sortable="true" headerText="#{bindings.ItemTypeVO1.hints.EnteredOn.label}"
+                                           id="c6">
+                                    <af:outputText value="#{row.EnteredOn}"
+                                                   shortDesc="#{bindings.ItemTypeVO1.hints.EnteredOn.tooltip}" id="ot5">
+                                        <af:convertDateTime pattern="#{bindings.ItemTypeVO1.hints.EnteredOn.format}"/>
+                                    </af:outputText>
+                                    <f:facet name="filter">
+                                        <af:inputDate value="#{bindings.ItemTypeVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EnteredOn.value}"
+                                                      id="id2">
+                                            <af:convertDateTime pattern="#{bindings.ItemTypeVO1.hints.EnteredOn.format}"/>
+                                        </af:inputDate>
+                                    </f:facet>
+                                </af:column>
+                            </af:table>
+                        </af:panelCollection>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:panelHeader>
+        </af:form>
+    </af:document>
+</f:view>

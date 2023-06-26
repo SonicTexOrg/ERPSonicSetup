@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="STP_0007.jsf" id="d1" inlineStyle="background-color:Teal;">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelHeader text="Machine Master Setup" id="ph1">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+                <af:panelSplitter id="ps1" orientation="vertical">
+                    <f:facet name="first">
+                        <af:panelBox text="Machine Setup" id="pb1">
+                            <f:facet name="toolbar">
+                                <af:toolbar id="t1">
+                                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="New"
+                                               disabled="#{!bindings.CreateInsert.enabled}" id="b5"/>
+                                    <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                               disabled="#{!bindings.Delete.enabled}" id="b6"/>
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b7"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b8">
+                                        <af:resetActionListener/>
+                                    </af:button>
+                                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                                               disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                    <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                               disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                </af:toolbar>
+                            </f:facet>
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.MachineId.inputValue}"
+                                              label="#{bindings.MachineId.hints.label}"
+                                              required="#{bindings.MachineId.hints.mandatory}"
+                                              columns="#{bindings.MachineId.hints.displayWidth}"
+                                              maximumLength="#{bindings.MachineId.hints.precision}"
+                                              shortDesc="#{bindings.MachineId.hints.tooltip}" id="it1" disabled="true">
+                                    <f:validator binding="#{bindings.MachineId.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.MachineId.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.MachineName.inputValue}"
+                                              label="#{bindings.MachineName.hints.label}"
+                                              required="#{bindings.MachineName.hints.mandatory}"
+                                              columns="#{bindings.MachineName.hints.displayWidth}"
+                                              maximumLength="#{bindings.MachineName.hints.precision}"
+                                              shortDesc="#{bindings.MachineName.hints.tooltip}" id="it2">
+                                    <f:validator binding="#{bindings.MachineName.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.EnteredBy.inputValue}"
+                                              label="#{bindings.EnteredBy.hints.label}"
+                                              required="#{bindings.EnteredBy.hints.mandatory}"
+                                              columns="#{bindings.EnteredBy.hints.displayWidth}"
+                                              maximumLength="#{bindings.EnteredBy.hints.precision}"
+                                              shortDesc="#{bindings.EnteredBy.hints.tooltip}" id="it3">
+                                    <f:validator binding="#{bindings.EnteredBy.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EnteredBy.format}"/>
+                                </af:inputText>
+                                <af:inputDate value="#{bindings.EnteredOn.inputValue}"
+                                              label="#{bindings.EnteredOn.hints.label}"
+                                              required="#{bindings.EnteredOn.hints.mandatory}"
+                                              columns="#{bindings.EnteredOn.hints.displayWidth}"
+                                              shortDesc="#{bindings.EnteredOn.hints.tooltip}" id="id1">
+                                    <f:validator binding="#{bindings.EnteredOn.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.EnteredOn.format}"/>
+                                </af:inputDate>
+                                <f:facet name="footer"/>
+                            </af:panelFormLayout>
+                        </af:panelBox>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="statusbar"/>
+                            <af:table value="#{bindings.MachineVO1.collectionModel}" var="row"
+                                      rows="#{bindings.MachineVO1.rangeSize}"
+                                      emptyText="#{bindings.MachineVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.MachineVO1.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.MachineVO1.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.MachineVO1.rangeSize}"
+                                      filterModel="#{bindings.MachineVO1Query.queryDescriptor}"
+                                      queryListener="#{bindings.MachineVO1Query.processQuery}" filterVisible="true"
+                                      varStatus="vs" id="t2"
+                                      partialTriggers="::b5 ::b6 ::b1 ::b2 ::b3 ::b4 :::b5 :::b6 :::b1 :::b2 :::b3 :::b4">
+                                <af:column sortProperty="#{bindings.MachineVO1.hints.MachineId.name}" filterable="true"
+                                           sortable="true" headerText="#{bindings.MachineVO1.hints.MachineId.label}"
+                                           id="c1">
+                                    <af:outputText value="#{row.MachineId}"
+                                                   shortDesc="#{bindings.MachineVO1.hints.MachineId.tooltip}" id="ot1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.MachineVO1.hints.MachineId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.MachineVO1.hints.MachineName.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.MachineVO1.hints.MachineName.label}" id="c2">
+                                    <af:outputText value="#{row.MachineName}"
+                                                   shortDesc="#{bindings.MachineVO1.hints.MachineName.tooltip}"
+                                                   id="ot2"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.MachineVO1.hints.EnteredBy.name}" filterable="true"
+                                           sortable="true" headerText="#{bindings.MachineVO1.hints.EnteredBy.label}"
+                                           id="c3">
+                                    <af:outputText value="#{row.EnteredBy}"
+                                                   shortDesc="#{bindings.MachineVO1.hints.EnteredBy.tooltip}" id="ot3">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.MachineVO1.hints.EnteredBy.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.MachineVO1.hints.EnteredOn.name}" filterable="true"
+                                           sortable="true" headerText="#{bindings.MachineVO1.hints.EnteredOn.label}"
+                                           id="c4">
+                                    <f:facet name="filter">
+                                        <af:inputDate value="#{bindings.MachineVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EnteredOn.value}"
+                                                      id="id2">
+                                            <af:convertDateTime pattern="#{bindings.MachineVO1.hints.EnteredOn.format}"/>
+                                        </af:inputDate>
+                                    </f:facet>
+                                    <af:outputText value="#{row.EnteredOn}"
+                                                   shortDesc="#{bindings.MachineVO1.hints.EnteredOn.tooltip}" id="ot4">
+                                        <af:convertDateTime pattern="#{bindings.MachineVO1.hints.EnteredOn.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.MachineVO1.hints.LastEditedBy.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.MachineVO1.hints.LastEditedBy.label}" id="c5">
+                                    <af:outputText value="#{row.LastEditedBy}"
+                                                   shortDesc="#{bindings.MachineVO1.hints.LastEditedBy.tooltip}"
+                                                   id="ot5">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.MachineVO1.hints.LastEditedBy.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.MachineVO1.hints.LastEditedOn.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.MachineVO1.hints.LastEditedOn.label}" id="c6">
+                                    <f:facet name="filter">
+                                        <af:inputDate value="#{bindings.MachineVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.LastEditedOn.value}"
+                                                      id="id3">
+                                            <af:convertDateTime pattern="#{bindings.MachineVO1.hints.LastEditedOn.format}"/>
+                                        </af:inputDate>
+                                    </f:facet>
+                                    <af:outputText value="#{row.LastEditedOn}"
+                                                   shortDesc="#{bindings.MachineVO1.hints.LastEditedOn.tooltip}"
+                                                   id="ot6">
+                                        <af:convertDateTime pattern="#{bindings.MachineVO1.hints.LastEditedOn.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                            </af:table>
+                        </af:panelCollection>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:panelHeader>
+        </af:form>
+    </af:document>
+</f:view>

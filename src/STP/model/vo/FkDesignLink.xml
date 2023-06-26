@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<ViewLink
+ xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Fk1ItemMasterLink"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  EntityAssociation="STP.model.asso.Fk1ItemMasterAssoc">
+</ViewLink>
+

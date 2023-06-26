@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0011PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TermsVO1" RangeSize="25" DataControl="AppModuleDataControl" id="TermsVO1Iterator"/>
+    <searchRegion Binds="TermsVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TermsVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="TermsVO1Iterator" id="TermsId">
+      <AttrNames>
+        <Item Value="TermsId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TermsVO1Iterator" id="TermsDescription">
+      <AttrNames>
+        <Item Value="TermsDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TermsVO1Iterator" id="TermsDays">
+      <AttrNames>
+        <Item Value="TermsDays"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="TermsVO1Iterator" StaticList="false" Uses="LOVTermsActive" id="Active" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="TermsVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TermsVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TermsVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TermsVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TermsVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TermsVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TermsVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TermsVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TermsVO1Iterator" id="TermsVO1">
+      <nodeDefinition DefName="STP.model.vo.TermsVO" Name="TermsVO10">
+        <AttrNames>
+          <Item Value="TermsId"/>
+          <Item Value="TermsDescription"/>
+          <Item Value="TermsDays"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

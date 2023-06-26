@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0008PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UomVO1" RangeSize="25" DataControl="AppModuleDataControl" id="UomVO1Iterator"/>
+    <searchRegion Binds="UomVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="UomVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="UomVO1Iterator" id="UomId">
+      <AttrNames>
+        <Item Value="UomId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UomVO1Iterator" id="UomName">
+      <AttrNames>
+        <Item Value="UomName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UomVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UomVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="UomVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="UomVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="UomVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="UomVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="UomVO1Iterator" id="UomVO1">
+      <nodeDefinition DefName="STP.model.vo.UomVO" Name="UomVO10">
+        <AttrNames>
+          <Item Value="UomId"/>
+          <Item Value="UomName"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+          <Item Value="LastEditedBy"/>
+          <Item Value="LastEditedOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="UomVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="UomVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Fk1FabDetailAssoc"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="FabMasterEO"
+    Cardinality="1"
+    Source="true"
+    Owner="STP.model.eo.FabMasterEO"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="FabMasterEO"/>
+      <Attr Name="_foreignKey" Value="STP.model.eo.FabMasterEO.PkFabMaster"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.eo.FabMasterEO.FabId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="FabDetailEO"
+    Cardinality="-1"
+    Owner="STP.model.eo.FabDetailEO"
+    HasOwner="true">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="FabDetailEO"/>
+      <Attr Name="_foreignKey" Value="STP.model.eo.FabDetailEO.Fk1FabDetail"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.eo.FabDetailEO.FabId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
