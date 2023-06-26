@@ -99,6 +99,11 @@
     EntityAttrName="LastEditedOn"
     EntityUsage="ContractorTypeEO"
     AliasName="LAST_EDITED_ON"/>
+  <ViewLinkAccessor
+    Name="ContractorVO"
+    ViewLink="STP.model.vol.ContractorTypeVOL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="STP.model.ERPSonicSTPModuleBundle"/>

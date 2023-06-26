@@ -18,6 +18,8 @@
     <page path="/untitled1.jsf" usageId="STP_view_untitled1PageDef1"/>
     <page path="/STP_0013.jsf" usageId="STP_view_STP_0013PageDef"/>
     <page path="/STP_0014.jsf" usageId="STP_view_STP_0014PageDef"/>
+    <page path="/STP_0015.jsf" usageId="STP_view_STP_0015PageDef"/>
+    <page path="/STP_0016.jsf" usageId="STP_view_STP_0016PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="STP_view_STP_0001PageDef" path="STP.view.pageDefs.STP_0001PageDef"/>
@@ -36,6 +38,8 @@
     <page id="STP_view_untitled1PageDef1" path="STP.view.pageDefs.untitled1PageDef1"/>
     <page id="STP_view_STP_0013PageDef" path="STP.view.pageDefs.STP_0013PageDef"/>
     <page id="STP_view_STP_0014PageDef" path="STP.view.pageDefs.STP_0014PageDef"/>
+    <page id="STP_view_STP_0015PageDef" path="STP.view.pageDefs.STP_0015PageDef"/>
+    <page id="STP_view_STP_0016PageDef" path="STP.view.pageDefs.STP_0016PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSonicSetupAppModuleDataControl" Package="STP.model.am"

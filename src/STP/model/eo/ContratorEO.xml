@@ -153,11 +153,29 @@
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="CONTRACTOR"/>
+  <AccessorAttribute
+    Name="ContractorTypeEO"
+    Association="STP.model.asso.ContractorTypeAssoc"
+    AssociationEnd="STP.model.asso.ContractorTypeAssoc.ContractorTypeEO"
+    AssociationOtherEnd="STP.model.asso.ContractorTypeAssoc.ContratorEO"
+    Type="STP.model.eo.ContractorTypeEOImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkContractor"
     PrimaryKey="true">
     <DesignTime>
       <Attr Name="_DBObjectName" Value="PK_CONTRACTOR"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.eo.ContratorEO.ContractorId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_ContratorEO">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_CONTRACTOR_TYPE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_CONTRATOR_EO"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="STP.model.eo.ContratorEO.ContractorId"/>

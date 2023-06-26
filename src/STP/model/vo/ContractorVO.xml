@@ -23,6 +23,14 @@
     Name="AccAdminLocationVO"
     ViewObjectName="S01.model.admin.vo.AdminLocationVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ContractorTypeLOV"
+    ViewObjectName="STP.model.vo.ContractorTypeVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ActiveYesNoLOV1"
+    ViewObjectName="STP.model.lov.ActiveYesNoLOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovLocationId"
     ListVOName="AccAdminLocationVO"
@@ -38,6 +46,42 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="LocationName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVContractorTypeId"
+    ListVOName="ContractorTypeLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContractorTypeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ContractorTypeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ContractorType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVContractorActive"
+    ListVOName="ActiveYesNoLOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Active"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CHKBoxActiveYesNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CHKBoxActiveYesNo"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -72,7 +116,15 @@
     PrecisionRule="true"
     EntityAttrName="ContractorTypeId"
     EntityUsage="ContratorEO"
-    AliasName="CONTRACTOR_TYPE_ID"/>
+    AliasName="CONTRACTOR_TYPE_ID"
+    LOVName="LOVContractorTypeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ContractorName"
     IsNotNull="true"
@@ -100,7 +152,15 @@
     PrecisionRule="true"
     EntityAttrName="Active"
     EntityUsage="ContratorEO"
-    AliasName="ACTIVE"/>
+    AliasName="ACTIVE"
+    LOVName="LOVContractorActive">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EnteredBy"
     IsNotNull="true"

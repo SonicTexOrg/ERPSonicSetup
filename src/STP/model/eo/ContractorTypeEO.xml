@@ -89,6 +89,13 @@
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="CONTRACTOR_TYPE"/>
+  <AccessorAttribute
+    Name="ContratorEO"
+    Association="STP.model.asso.ContractorTypeAssoc"
+    AssociationEnd="STP.model.asso.ContractorTypeAssoc.ContratorEO"
+    AssociationOtherEnd="STP.model.asso.ContractorTypeAssoc.ContractorTypeEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkContractorType"
     PrimaryKey="true">

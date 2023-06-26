@@ -29,7 +29,8 @@ public class ContratorEOImpl extends EntityImpl {
         EnteredBy,
         EnteredOn,
         LastEditedBy,
-        LastEditedOn;
+        LastEditedOn,
+        ContractorTypeEO;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -52,6 +53,8 @@ public class ContratorEOImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int CONTRACTORID = AttributesEnum.ContractorId.index();
     public static final int LOCATIONID = AttributesEnum.LocationId.index();
     public static final int CONTRACTORTYPEID = AttributesEnum.ContractorTypeId.index();
@@ -63,12 +66,21 @@ public class ContratorEOImpl extends EntityImpl {
     public static final int ENTEREDON = AttributesEnum.EnteredOn.index();
     public static final int LASTEDITEDBY = AttributesEnum.LastEditedBy.index();
     public static final int LASTEDITEDON = AttributesEnum.LastEditedOn.index();
+    public static final int CONTRACTORTYPEEO = AttributesEnum.ContractorTypeEO.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public ContratorEOImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("STP.model.eo.ContratorEO");
+    }
+
 
     /**
      * Gets the attribute value for ContractorId, using the alias name ContractorId.
@@ -247,19 +259,27 @@ public class ContratorEOImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity ContractorTypeEOImpl.
+     */
+    public ContractorTypeEOImpl getContractorTypeEO() {
+        return (ContractorTypeEOImpl) getAttributeInternal(CONTRACTORTYPEEO);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity ContractorTypeEOImpl.
+     */
+    public void setContractorTypeEO(ContractorTypeEOImpl value) {
+        setAttributeInternal(CONTRACTORTYPEEO, value);
+    }
+
+
+    /**
      * @param contractorId key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(Number contractorId) {
         return new Key(new Object[] { contractorId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("STP.model.eo.ContratorEO");
     }
 
     /**

@@ -13,17 +13,13 @@
         ResId="STP.model.am.ERPSonicSetupAppModule_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <ResourceBundle>
-    <PropertiesBundle
-      PropertiesFile="STP.model.ERPSonicSTPModuleBundle"/>
-  </ResourceBundle>
-<ViewUsage
+  <ViewUsage
     Name="BpFrefixVO1"
     ViewObjectName="STP.model.vo.BpFrefixVO"/>
   <ViewUsage
     Name="BpMasterVO1"
     ViewObjectName="STP.model.vo.BpMasterVO"/>
-   <ViewUsage
+  <ViewUsage
     Name="FabDetailVO1"
     ViewObjectName="STP.model.vo.FabDetailVO"/>
   <ViewUsage
@@ -101,6 +97,12 @@
   <ViewUsage
     Name="ContractorVO1"
     ViewObjectName="STP.model.vo.ContractorVO"/>
+  <ViewUsage
+    Name="ContractorTypeVO2"
+    ViewObjectName="STP.model.vo.ContractorTypeVO"/>
+  <ViewUsage
+    Name="ContractorVO2"
+    ViewObjectName="STP.model.vo.ContractorVO"/>
   <ViewLinkUsage
     Name="Fk1FabDetailLink1"
     ViewLinkObjectName="STP.model.vol.Fk1FabDetailLink"
@@ -148,5 +150,15 @@
     ViewLinkObjectName="STP.model.vol.FabDetailYarnItemVOL"
     SrcViewUsageName="STP.model.am.ERPSonicSetupAppModule.YarnItemMasterQVO2"
     DstViewUsageName="STP.model.am.ERPSonicSetupAppModule.FabDetailVO4"
-    Reversed="false"/>  
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContractorTypeVOL1"
+    ViewLinkObjectName="STP.model.vol.ContractorTypeVOL"
+    SrcViewUsageName="STP.model.am.ERPSonicSetupAppModule.ContractorTypeVO2"
+    DstViewUsageName="STP.model.am.ERPSonicSetupAppModule.ContractorVO2"
+    Reversed="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="STP.model.ERPSonicSTPModuleBundle"/>
+  </ResourceBundle>
 </AppModule>
