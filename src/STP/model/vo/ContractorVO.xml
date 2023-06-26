@@ -19,6 +19,28 @@
         ResId="STP.model.vo.ContractorVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="AccAdminLocationVO"
+    ViewObjectName="S01.model.admin.vo.AdminLocationVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovLocationId"
+    ListVOName="AccAdminLocationVO"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LocationName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="ContratorEO"
     Entity="STP.model.eo.ContratorEO"/>
@@ -35,7 +57,15 @@
     PrecisionRule="true"
     EntityAttrName="LocationId"
     EntityUsage="ContratorEO"
-    AliasName="LOCATION_ID"/>
+    AliasName="LOCATION_ID"
+    LOVName="LovLocationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ContractorTypeId"
     IsNotNull="true"

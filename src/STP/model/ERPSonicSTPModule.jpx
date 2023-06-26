@@ -10,9 +10,8 @@
   <DesignTime>
     <Attr Name="_jprName" Value="../../../ERPSonicSTPModule.jpr"/>
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
-    <Attr Name="_NamedConnection" Value="ConnSonic"/>
-    <Attr Name="_appModuleNames0" Value="STP.model.am.AppModule"/>
-    <Attr Name="_appModuleNames1" Value="STP.model.am.ERPSonicSetupAppModule"/>
+    <Attr Name="_NamedConnection" Value="ERPSonicSetupConn"/>
+    <Attr Name="_appModuleNames0" Value="STP.model.am.ERPSonicSetupAppModule"/>
   </DesignTime>
   <Containee
     Name="am"
@@ -71,4 +70,12 @@
       <Attr Name="_VL" Value="true"/>
     </DesignTime>
   </Containee>
+  <AppContainee
+    Name="Model"
+    FullName="S01.model.admin.Model"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="ERPSonicMainAppModelLib.jar"/>
+    </DesignTime>
+  </AppContainee>
 </JboProject>

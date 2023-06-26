@@ -1,6 +1,6 @@
 <References xmlns="http://xmlns.oracle.com/adf/jndi">
-  <Reference name="ConnSonic" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="ConnSonic"
-             xmlns="">
+  <Reference name="ERPSonicSetupConn" className="oracle.jdeveloper.db.adapter.DatabaseProvider"
+             credentialStoreKey="ERPSonicSetupConn" xmlns="">
     <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
     <RefAddresses>
       <StringRefAddr addrType="sid">
@@ -9,14 +9,14 @@
       <StringRefAddr addrType="subtype">
         <Contents>oraJDBC</Contents>
       </StringRefAddr>
-      <StringRefAddr addrType="user">
-        <Contents>sonic</Contents>
+      <StringRefAddr addrType="port">
+        <Contents>1521</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="hostname">
         <Contents>localhost</Contents>
       </StringRefAddr>
-      <StringRefAddr addrType="port">
-        <Contents>1521</Contents>
+      <StringRefAddr addrType="user">
+        <Contents>SONIC</Contents>
       </StringRefAddr>
       <SecureRefAddr addrType="password"/>
       <StringRefAddr addrType="oraDriverType">

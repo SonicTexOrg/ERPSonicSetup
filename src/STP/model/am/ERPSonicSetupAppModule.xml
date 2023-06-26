@@ -104,49 +104,49 @@
   <ViewLinkUsage
     Name="Fk1FabDetailLink1"
     ViewLinkObjectName="STP.model.vol.Fk1FabDetailLink"
-    SrcViewUsageName="STP.model.am.AppModule.FabMasterVO1"
-    DstViewUsageName="STP.model.am.AppModule.FabDetailVO2"
+    SrcViewUsageName="STP.model.am.ERPSonicSetupAppModule.FabMasterVO1"
+    DstViewUsageName="STP.model.am.ERPSonicSetupAppModule.FabDetailVO2"
     Reversed="false"/>
   <ViewLinkUsage
     Name="FkFabMasterLink1"
     ViewLinkObjectName="STP.model.vol.FkFabMasterLink"
-    SrcViewUsageName="STP.model.am.AppModule.FabTypeVO1"
-    DstViewUsageName="STP.model.am.AppModule.FabMasterVO2"
+    SrcViewUsageName="STP.model.am.ERPSonicSetupAppModule.FabTypeVO1"
+    DstViewUsageName="STP.model.am.ERPSonicSetupAppModule.FabMasterVO2"
     Reversed="false"/>
   <ViewLinkUsage
     Name="FkBpMasterLink1"
     ViewLinkObjectName="STP.model.vol.FkBpMasterLink"
-    SrcViewUsageName="STP.model.am.AppModule.BpFrefixVO1"
-    DstViewUsageName="STP.model.am.AppModule.BpMasterVO2"
+    SrcViewUsageName="STP.model.am.ERPSonicSetupAppModule.BpFrefixVO1"
+    DstViewUsageName="STP.model.am.ERPSonicSetupAppModule.BpMasterVO2"
     Reversed="false"/>
   <ViewLinkUsage
     Name="Fk2FabDetailLink1"
     ViewLinkObjectName="STP.model.vol.Fk2FabDetailLink"
-    SrcViewUsageName="STP.model.am.AppModule.ItemMasterVO1"
-    DstViewUsageName="STP.model.am.AppModule.FabDetailVO3"
+    SrcViewUsageName="STP.model.am.ERPSonicSetupAppModule.ItemMasterVO1"
+    DstViewUsageName="STP.model.am.ERPSonicSetupAppModule.FabDetailVO3"
     Reversed="false"/>
   <ViewLinkUsage
     Name="Fk2ItemMasterLink1"
     ViewLinkObjectName="STP.model.vol.Fk2ItemMasterLink"
-    SrcViewUsageName="STP.model.am.AppModule.ItemTypeVO1"
-    DstViewUsageName="STP.model.am.AppModule.ItemMasterVO2"
+    SrcViewUsageName="STP.model.am.ERPSonicSetupAppModule.ItemTypeVO1"
+    DstViewUsageName="STP.model.am.ERPSonicSetupAppModule.ItemMasterVO2"
     Reversed="false"/>
   <ViewLinkUsage
     Name="Fk3ItemMasterLink1"
     ViewLinkObjectName="STP.model.vol.Fk3ItemMasterLink"
-    SrcViewUsageName="STP.model.am.AppModule.UomVO1"
-    DstViewUsageName="STP.model.am.AppModule.ItemMasterVO3"
+    SrcViewUsageName="STP.model.am.ERPSonicSetupAppModule.UomVO1"
+    DstViewUsageName="STP.model.am.ERPSonicSetupAppModule.ItemMasterVO3"
     Reversed="false"/>
   <ViewLinkUsage
     Name="Fk1ItemMasterLink1"
     ViewLinkObjectName="STP.model.vol.Fk1ItemMasterLink"
-    SrcViewUsageName="STP.model.am.AppModule.ItemCategoryVO1"
-    DstViewUsageName="STP.model.am.AppModule.ItemMasterVO4"
+    SrcViewUsageName="STP.model.am.ERPSonicSetupAppModule.ItemCategoryVO1"
+    DstViewUsageName="STP.model.am.ERPSonicSetupAppModule.ItemMasterVO4"
     Reversed="false"/>
   <ViewLinkUsage
     Name="FabDetailYarnItemVOL"
     ViewLinkObjectName="STP.model.vol.FabDetailYarnItemVOL"
-    SrcViewUsageName="STP.model.am.AppModule.YarnItemMasterQVO2"
-    DstViewUsageName="STP.model.am.AppModule.FabDetailVO4"
+    SrcViewUsageName="STP.model.am.ERPSonicSetupAppModule.YarnItemMasterQVO2"
+    DstViewUsageName="STP.model.am.ERPSonicSetupAppModule.FabDetailVO4"
     Reversed="false"/>  
 </AppModule>
