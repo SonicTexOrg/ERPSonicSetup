@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="BpFrefixVO1" RangeSize="25" DataControl="AppModuleDataControl" id="BpFrefixVO1Iterator"/>
+    <iterator Binds="BpFrefixVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="BpFrefixVO1Iterator"/>
     <searchRegion Binds="BpFrefixVO1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="BpFrefixVO1Query"/>
   </executables>
@@ -51,8 +51,8 @@
     <action IterBinding="BpFrefixVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="BpFrefixVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="BpFrefixVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
     <tree IterBinding="BpFrefixVO1Iterator" id="BpFrefixVO1">
       <nodeDefinition DefName="STP.model.vo.BpFrefixVO" Name="BpFrefixVO10">
         <AttrNames>

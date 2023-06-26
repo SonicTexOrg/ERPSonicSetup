@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="ColorsVO1" RangeSize="25" DataControl="AppModuleDataControl" id="ColorsVO1Iterator"/>
+    <iterator Binds="ColorsVO1" RangeSize="25" DataControl="ERPSonicSetupERPSonicSetupAppModuleDataControl" id="ColorsVO1Iterator"/>
     <searchRegion Binds="ColorsVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="ColorsVO1Query"/>
   </executables>
@@ -45,8 +45,8 @@
     <action IterBinding="ColorsVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="ColorsVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="ColorsVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
     <tree IterBinding="ColorsVO1Iterator" id="ColorsVO1">
       <nodeDefinition DefName="STP.model.vo.ColorsVO1" Name="ColorsVO10">
         <AttrNames>

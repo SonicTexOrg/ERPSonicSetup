@@ -12,6 +12,7 @@
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_NamedConnection" Value="ConnSonic"/>
     <Attr Name="_appModuleNames0" Value="STP.model.am.AppModule"/>
+    <Attr Name="_appModuleNames1" Value="STP.model.am.ERPSonicSetupAppModule"/>
   </DesignTime>
   <Containee
     Name="am"

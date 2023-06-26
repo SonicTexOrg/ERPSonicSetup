@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="UomVO1" RangeSize="25" DataControl="AppModuleDataControl" id="UomVO1Iterator"/>
+    <iterator Binds="UomVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="UomVO1Iterator"/>
     <searchRegion Binds="UomVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="UomVO1Query"/>
   </executables>
@@ -47,7 +47,7 @@
     </tree>
     <action IterBinding="UomVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="UomVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
   </bindings>
 </pageDefinition>

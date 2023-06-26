@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="FabTypeVO1" RangeSize="25" DataControl="AppModuleDataControl" id="FabTypeVO1Iterator"/>
+    <iterator Binds="FabTypeVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="FabTypeVO1Iterator"/>
     <searchRegion Binds="FabTypeVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="FabTypeVO1Query"/>
   </executables>
@@ -41,8 +41,8 @@
     <action IterBinding="FabTypeVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="FabTypeVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="FabTypeVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
     <tree IterBinding="FabTypeVO1Iterator" id="FabTypeVO1">
       <nodeDefinition DefName="STP.model.vo.FabTypeVO" Name="FabTypeVO10">
         <AttrNames>

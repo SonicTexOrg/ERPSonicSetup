@@ -38,10 +38,10 @@
     <page id="STP_view_STP_0014PageDef" path="STP.view.pageDefs.STP_0014PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
-    <BC4JDataControl id="AppModuleDataControl" Package="STP.model.am"
+    <BC4JDataControl id="ERPSonicSetupAppModuleDataControl" Package="STP.model.am"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
-                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     SupportsSortCollection="true" Configuration="ERPSonicSetupAppModuleLocal" syncMode="Immediate"
                      xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
   </dataControlUsages>
 </Application>

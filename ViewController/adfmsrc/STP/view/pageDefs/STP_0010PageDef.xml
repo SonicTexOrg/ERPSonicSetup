@@ -4,8 +4,8 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="FabMasterVO1" RangeSize="25" DataControl="AppModuleDataControl" id="FabMasterVO1Iterator"/>
-    <iterator Binds="FabDetailVO2" RangeSize="25" DataControl="AppModuleDataControl" id="FabDetailVO2Iterator"/>
+    <iterator Binds="FabMasterVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="FabMasterVO1Iterator"/>
+    <iterator Binds="FabDetailVO2" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="FabDetailVO2Iterator"/>
     <searchRegion Binds="FabDetailVO2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="FabDetailVO2Query"/>
   </executables>
@@ -79,8 +79,8 @@
     <action IterBinding="FabMasterVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="FabMasterVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="FabMasterVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
     <tree IterBinding="FabDetailVO2Iterator" id="FabDetailVO2">
       <nodeDefinition DefName="STP.model.vo.FabDetailVO" Name="FabDetailVO20">
         <AttrNames>

@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="ItemMasterVO1" RangeSize="25" DataControl="AppModuleDataControl" id="ItemMasterVO1Iterator"/>
+    <iterator Binds="ItemMasterVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="ItemMasterVO1Iterator"/>
     <searchRegion Binds="ItemMasterVO1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ItemMasterVO1Query"/>
   </executables>
@@ -112,8 +112,8 @@
     </tree>
     <action IterBinding="ItemMasterVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="ItemMasterVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
     <list IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterItemTypeId" id="ItemTypeId1"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <button IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterActive" id="Active1"

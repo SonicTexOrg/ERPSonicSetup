@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="BpMasterVO1" RangeSize="25" DataControl="AppModuleDataControl" id="BpMasterVO1Iterator"/>
+    <iterator Binds="BpMasterVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="BpMasterVO1Iterator"/>
     <searchRegion Binds="BpMasterVO1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="BpMasterVO1Query"/>
   </executables>
@@ -93,8 +93,8 @@
     <action IterBinding="BpMasterVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="BpMasterVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="BpMasterVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
     <tree IterBinding="BpMasterVO1Iterator" id="BpMasterVO1">
       <nodeDefinition DefName="STP.model.vo.BpMasterVO" Name="BpMasterVO10">
         <AttrNames>

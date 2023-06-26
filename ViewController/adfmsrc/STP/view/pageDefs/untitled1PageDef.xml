@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="BpMasterVO1" RangeSize="25" DataControl="AppModuleDataControl" id="BpMasterVO1Iterator"/>
+    <iterator Binds="BpMasterVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="BpMasterVO1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="BpMasterVO1Iterator" id="BpId">

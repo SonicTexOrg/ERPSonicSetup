@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="SizesVO1" RangeSize="25" DataControl="AppModuleDataControl" id="SizesVO1Iterator"/>
+    <iterator Binds="SizesVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="SizesVO1Iterator"/>
     <searchRegion Binds="SizesVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="SizesVO1Query"/>
   </executables>
@@ -45,8 +45,8 @@
     <action IterBinding="SizesVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="SizesVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="SizesVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
     <tree IterBinding="SizesVO1Iterator" id="SizesVO1">
       <nodeDefinition DefName="STP.model.vo.SizesVO" Name="SizesVO10">
         <AttrNames>

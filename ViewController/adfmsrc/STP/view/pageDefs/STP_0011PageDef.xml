@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TermsVO1" RangeSize="25" DataControl="AppModuleDataControl" id="TermsVO1Iterator"/>
+    <iterator Binds="TermsVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="TermsVO1Iterator"/>
     <searchRegion Binds="TermsVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TermsVO1Query"/>
   </executables>
@@ -45,8 +45,8 @@
     <action IterBinding="TermsVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="TermsVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TermsVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
     <tree IterBinding="TermsVO1Iterator" id="TermsVO1">
       <nodeDefinition DefName="STP.model.vo.TermsVO" Name="TermsVO10">
         <AttrNames>
