@@ -1,11 +1,14 @@
 package STP.model.eo;
 
+import java.math.BigDecimal;
+
 import oracle.jbo.ApplicationModule;
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
 import oracle.jbo.ViewObject;
 import oracle.jbo.domain.Date;
+import oracle.jbo.domain.NClobDomain;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -28,6 +31,8 @@ public class ItemMasterEOImpl extends EntityImpl {
         ItemCatId,
         ItemDescription,
         UomId,
+        SizeId,
+        ColorId,
         ParentId,
         MachineId,
         OldItemId,
@@ -69,12 +74,16 @@ public class ItemMasterEOImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ITEMID = AttributesEnum.ItemId.index();
     public static final int ITEMTYPEID = AttributesEnum.ItemTypeId.index();
     public static final int ITEMNO = AttributesEnum.ItemNo.index();
     public static final int ITEMCATID = AttributesEnum.ItemCatId.index();
     public static final int ITEMDESCRIPTION = AttributesEnum.ItemDescription.index();
     public static final int UOMID = AttributesEnum.UomId.index();
+    public static final int SIZEID = AttributesEnum.SizeId.index();
+    public static final int COLORID = AttributesEnum.ColorId.index();
     public static final int PARENTID = AttributesEnum.ParentId.index();
     public static final int MACHINEID = AttributesEnum.MachineId.index();
     public static final int OLDITEMID = AttributesEnum.OldItemId.index();
@@ -100,6 +109,14 @@ public class ItemMasterEOImpl extends EntityImpl {
      */
     public ItemMasterEOImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("STP.model.eo.ItemMasterEO");
+    }
+
 
     /**
      * Gets the attribute value for ItemId, using the alias name ItemId.
@@ -438,6 +455,38 @@ public class ItemMasterEOImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for ColorId, using the alias name ColorId.
+     * @return the value of ColorId
+     */
+    public Number getColorId() {
+        return (Number) getAttributeInternal(COLORID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ColorId.
+     * @param value value to set the ColorId
+     */
+    public void setColorId(Number value) {
+        setAttributeInternal(COLORID, value);
+    }
+
+    /**
+     * Gets the attribute value for SizeId, using the alias name SizeId.
+     * @return the value of SizeId
+     */
+    public Number getSizeId() {
+        return (Number) getAttributeInternal(SIZEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SizeId.
+     * @param value value to set the SizeId
+     */
+    public void setSizeId(Number value) {
+        setAttributeInternal(SIZEID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getFabDetailEO() {
@@ -486,6 +535,7 @@ public class ItemMasterEOImpl extends EntityImpl {
         setAttributeInternal(ITEMCATEGORYEO, value);
     }
 
+
     /**
      * @param itemId key constituent
 
@@ -493,13 +543,6 @@ public class ItemMasterEOImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(Number itemId) {
         return new Key(new Object[] { itemId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("STP.model.eo.ItemMasterEO");
     }
 
     /**

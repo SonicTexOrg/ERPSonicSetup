@@ -41,6 +41,14 @@
     Name="ItemMasterActiveYesNoLOV"
     ViewObjectName="STP.model.lov.ActiveYesNoLOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemMasterSizesVOLov"
+    ViewObjectName="STP.model.vo.SizesVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemMasterColorsVOLOV"
+    ViewObjectName="STP.model.vo.ColorsVO1"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOVItemMasterItemTypeId"
     ListVOName="ItemMasterItemTypeLOV"
@@ -171,6 +179,44 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOVItemMasterSizeIdLov"
+    ListVOName="ItemMasterSizesVOLov"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SizeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SizeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SizeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVItemMasterColorIdLov"
+    ListVOName="ItemMasterColorsVOLOV"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ColorId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ColorId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ColorName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="ItemMasterEO"
     Entity="STP.model.eo.ItemMasterEO"/>
@@ -237,6 +283,34 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SizeId"
+    PrecisionRule="true"
+    EntityAttrName="SizeId"
+    EntityUsage="ItemMasterEO"
+    AliasName="SIZE_ID"
+    LOVName="LOVItemMasterSizeIdLov">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ColorId"
+    PrecisionRule="true"
+    EntityAttrName="ColorId"
+    EntityUsage="ItemMasterEO"
+    AliasName="COLOR_ID"
+    LOVName="LOVItemMasterColorIdLov">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

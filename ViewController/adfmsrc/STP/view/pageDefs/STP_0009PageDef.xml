@@ -92,6 +92,8 @@
           <Item Value="ItemCatId"/>
           <Item Value="ItemDescription"/>
           <Item Value="UomId"/>
+          <Item Value="SizeId"/>
+          <Item Value="ColorId"/>
           <Item Value="ParentId"/>
           <Item Value="MachineId"/>
           <Item Value="OldItemId"/>
@@ -122,5 +124,9 @@
         <Item Value="Active"/>
       </AttrNames>
     </button>
+    <list IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterSizeIdLov" id="SizeId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterColorIdLov" id="ColorId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

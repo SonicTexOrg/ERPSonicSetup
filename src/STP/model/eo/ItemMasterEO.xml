@@ -110,6 +110,34 @@
     </Properties>
   </Attribute>
   <Attribute
+    Name="SizeId"
+    ColumnName="SIZE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ITEM_MASTER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STP.model.eo.ItemMasterEO.SizeId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ColorId"
+    ColumnName="COLOR_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ITEM_MASTER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STP.model.eo.ItemMasterEO.ColorId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
     Name="ParentId"
     ColumnName="PARENT_ID"
     SQLType="NUMERIC"

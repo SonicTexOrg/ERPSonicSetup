@@ -87,6 +87,20 @@
                                             <f:selectItems value="#{bindings.UomId.items}" id="si1"/>
                                             <f:validator binding="#{bindings.UomId.validator}"/>
                                         </af:selectOneChoice>
+                                        <af:selectOneChoice value="#{bindings.SizeId.inputValue}"
+                                                            label="#{bindings.SizeId.label}"
+                                                            required="#{bindings.SizeId.hints.mandatory}"
+                                                            shortDesc="#{bindings.SizeId.hints.tooltip}" id="soc10">
+                                            <f:selectItems value="#{bindings.SizeId.items}" id="si12"/>
+                                            <f:validator binding="#{bindings.SizeId.validator}"/>
+                                        </af:selectOneChoice>
+                                        <af:selectOneChoice value="#{bindings.ColorId.inputValue}"
+                                                            label="#{bindings.ColorId.label}"
+                                                            required="#{bindings.ColorId.hints.mandatory}"
+                                                            shortDesc="#{bindings.ColorId.hints.tooltip}" id="soc11">
+                                            <f:selectItems value="#{bindings.ColorId.items}" id="si13"/>
+                                            <f:validator binding="#{bindings.ColorId.validator}"/>
+                                        </af:selectOneChoice>
                                         <af:inputText value="#{bindings.ParentId.inputValue}"
                                                       label="#{bindings.ParentId.hints.label}"
                                                       required="#{bindings.ParentId.hints.mandatory}"
@@ -208,9 +222,10 @@
                             <f:facet name="toolbar"/>
                             <f:facet name="statusbar"/>
                             <af:table value="#{bindings.ItemMasterVO1.collectionModel}" var="row"
+                            
                                       rows="#{bindings.ItemMasterVO1.rangeSize}"
                                       emptyText="#{bindings.ItemMasterVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                      rowBandingInterval="0"
+                                      rowBandingInterval="1"
                                       selectedRowKeys="#{bindings.ItemMasterVO1.collectionModel.selectedRow}"
                                       selectionListener="#{bindings.ItemMasterVO1.collectionModel.makeCurrent}"
                                       rowSelection="single" fetchSize="#{bindings.ItemMasterVO1.rangeSize}"
@@ -219,6 +234,8 @@
                                       varStatus="vs" id="t1"
                                       partialTriggers="::b1 ::b2 ::b3 ::b4 :::b1 :::b2 :::b3 :::b4 :::b5 :::b6">
                                 <af:column sortProperty="#{bindings.ItemMasterVO1.hints.ItemId.name}" filterable="true"
+                                
+                                
                                            sortable="true" headerText="#{bindings.ItemMasterVO1.hints.ItemId.label}"
                                            id="c1">
                                     <af:outputText value="#{row.ItemId}"
@@ -230,12 +247,14 @@
                                 <af:column sortProperty="#{bindings.ItemMasterVO1.hints.ItemTypeId.name}"
                                            filterable="true" sortable="true"
                                            headerText="#{bindings.ItemMasterVO1.hints.ItemTypeId.label}" id="c2">
-                                    <af:outputText value="#{row.ItemTypeId}"
-                                                   shortDesc="#{bindings.ItemMasterVO1.hints.ItemTypeId.tooltip}"
-                                                   id="ot2">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.ItemMasterVO1.hints.ItemTypeId.format}"/>
-                                    </af:outputText>
+                                    <af:selectOneChoice value="#{row.bindings.ItemTypeId.inputValue}"
+                                                        label="#{row.bindings.ItemTypeId.label}"
+                                                        required="#{bindings.ItemMasterVO1.hints.ItemTypeId.mandatory}"
+                                                        shortDesc="#{bindings.ItemMasterVO1.hints.ItemTypeId.tooltip}"
+                                                        readOnly="true" id="soc14">
+                                        <f:selectItems value="#{row.bindings.ItemTypeId.items}" id="si16"/>
+                                        <f:validator binding="#{row.bindings.ItemTypeId.validator}"/>
+                                    </af:selectOneChoice>
                                 </af:column>
                                 <af:column sortProperty="#{bindings.ItemMasterVO1.hints.ItemNo.name}" filterable="true"
                                            sortable="true" headerText="#{bindings.ItemMasterVO1.hints.ItemNo.label}"
@@ -272,6 +291,30 @@
                                                         readOnly="true" id="soc5">
                                         <f:selectItems value="#{row.bindings.UomId.items}" id="si7"/>
                                         <f:validator binding="#{row.bindings.UomId.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ItemMasterVO1.hints.SizeId.name}" filterable="true"
+                                           sortable="true" headerText="#{bindings.ItemMasterVO1.hints.SizeId.label}"
+                                           id="c22">
+                                    <af:selectOneChoice value="#{row.bindings.SizeId.inputValue}"
+                                                        label="#{row.bindings.SizeId.label}"
+                                                        required="#{bindings.ItemMasterVO1.hints.SizeId.mandatory}"
+                                                        shortDesc="#{bindings.ItemMasterVO1.hints.SizeId.tooltip}"
+                                                        readOnly="true" id="soc12">
+                                        <f:selectItems value="#{row.bindings.SizeId.items}" id="si15"/>
+                                        <f:validator binding="#{row.bindings.SizeId.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ItemMasterVO1.hints.ColorId.name}" filterable="true"
+                                           sortable="true" headerText="#{bindings.ItemMasterVO1.hints.ColorId.label}"
+                                           id="c23" frozen="true">
+                                    <af:selectOneChoice value="#{row.bindings.ColorId.inputValue}"
+                                                        label="#{row.bindings.ColorId.label}"
+                                                        required="#{bindings.ItemMasterVO1.hints.ColorId.mandatory}"
+                                                        shortDesc="#{bindings.ItemMasterVO1.hints.ColorId.tooltip}"
+                                                        readOnly="true" id="soc13">
+                                        <f:selectItems value="#{row.bindings.ColorId.items}" id="si14"/>
+                                        <f:validator binding="#{row.bindings.ColorId.validator}"/>
                                     </af:selectOneChoice>
                                 </af:column>
                                 <af:column sortProperty="#{bindings.ItemMasterVO1.hints.ParentId.name}"
@@ -374,8 +417,7 @@
                                            sortable="true" headerText="#{bindings.ItemMasterVO1.hints.Active.label}"
                                            id="c17">
                                     <af:outputText value="#{row.Active}"
-                                                   shortDesc="#{bindings.ItemMasterVO1.hints.Active.tooltip}"
-                                                   id="ot12"/>
+                                                   shortDesc="#{bindings.ItemMasterVO1.hints.Active.tooltip}" id="ot2"/>
                                 </af:column>
                                 <af:column sortProperty="#{bindings.ItemMasterVO1.hints.EnteredBy.name}"
                                            filterable="true" sortable="true"
@@ -390,17 +432,17 @@
                                 <af:column sortProperty="#{bindings.ItemMasterVO1.hints.EnteredOn.name}"
                                            filterable="true" sortable="true"
                                            headerText="#{bindings.ItemMasterVO1.hints.EnteredOn.label}" id="c19">
-                                    <f:facet name="filter">
-                                        <af:inputDate value="#{bindings.ItemMasterVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EnteredOn.value}"
-                                                      id="id2">
-                                            <af:convertDateTime pattern="#{bindings.ItemMasterVO1.hints.EnteredOn.format}"/>
-                                        </af:inputDate>
-                                    </f:facet>
                                     <af:outputText value="#{row.EnteredOn}"
                                                    shortDesc="#{bindings.ItemMasterVO1.hints.EnteredOn.tooltip}"
                                                    id="ot14">
                                         <af:convertDateTime pattern="#{bindings.ItemMasterVO1.hints.EnteredOn.format}"/>
                                     </af:outputText>
+                                    <f:facet name="filter">
+                                        <af:inputDate value="#{bindings.ItemMasterVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EnteredOn.value}"
+                                                      id="id3">
+                                            <af:convertDateTime pattern="#{bindings.ItemMasterVO1.hints.EnteredOn.format}"/>
+                                        </af:inputDate>
+                                    </f:facet>
                                 </af:column>
                                 <af:column sortProperty="#{bindings.ItemMasterVO1.hints.LastEditedBy.name}"
                                            filterable="true" sortable="true"
@@ -415,17 +457,17 @@
                                 <af:column sortProperty="#{bindings.ItemMasterVO1.hints.LastEditedOn.name}"
                                            filterable="true" sortable="true"
                                            headerText="#{bindings.ItemMasterVO1.hints.LastEditedOn.label}" id="c21">
-                                    <f:facet name="filter">
-                                        <af:inputDate value="#{bindings.ItemMasterVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.LastEditedOn.value}"
-                                                      id="id3">
-                                            <af:convertDateTime pattern="#{bindings.ItemMasterVO1.hints.LastEditedOn.format}"/>
-                                        </af:inputDate>
-                                    </f:facet>
                                     <af:outputText value="#{row.LastEditedOn}"
                                                    shortDesc="#{bindings.ItemMasterVO1.hints.LastEditedOn.tooltip}"
                                                    id="ot16">
                                         <af:convertDateTime pattern="#{bindings.ItemMasterVO1.hints.LastEditedOn.format}"/>
                                     </af:outputText>
+                                    <f:facet name="filter">
+                                        <af:inputDate value="#{bindings.ItemMasterVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.LastEditedOn.value}"
+                                                      id="id2">
+                                            <af:convertDateTime pattern="#{bindings.ItemMasterVO1.hints.LastEditedOn.format}"/>
+                                        </af:inputDate>
+                                    </f:facet>
                                 </af:column>
                             </af:table>
                         </af:panelCollection>

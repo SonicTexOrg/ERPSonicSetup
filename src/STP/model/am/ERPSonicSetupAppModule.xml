@@ -103,6 +103,12 @@
   <ViewUsage
     Name="ContractorVO2"
     ViewObjectName="STP.model.vo.ContractorVO"/>
+  <ViewUsage
+    Name="DiaVO1"
+    ViewObjectName="STP.model.vo.DiaVO"/>
+  <ViewUsage
+    Name="PrintMasterVO1"
+    ViewObjectName="STP.model.vo.PrintMasterVO"/>
   <ViewLinkUsage
     Name="Fk1FabDetailLink1"
     ViewLinkObjectName="STP.model.vol.Fk1FabDetailLink"
