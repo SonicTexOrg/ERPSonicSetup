@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ItemMasterVO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="ItemMasterItemTypeLOV"
+    ViewObjectName="STP.model.vo.ItemTypeVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemMasterItemCategoryLOV"
+    ViewObjectName="STP.model.vo.ItemCategoryVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemMasterUomLOV"
+    ViewObjectName="STP.model.vo.UomVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemMasterMachineLOV"
+    ViewObjectName="STP.model.vo.MachineVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemMasterBrandLOV"
+    ViewObjectName="STP.model.qvo.BrandQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemMasterStockServiceLOV"
+    ViewObjectName="STP.model.qvo.StockServiceQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemMasterActiveYesNoLOV"
+    ViewObjectName="STP.model.lov.ActiveYesNoLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemMasterSizesVOLov"
+    ViewObjectName="STP.model.vo.SizesVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemMasterColorsVOLOV"
+    ViewObjectName="STP.model.vo.ColorsVO1"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOVItemMasterItemTypeId"
+    ListVOName="ItemMasterItemTypeLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemTypeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemTypeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ItemTypePrefix"/>
+      <Item Value="ItemTypeDesc"/>
+      <Item Value="ItemTypeId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVItemMasterItemCatId"
+    ListVOName="ItemMasterItemCategoryLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemCatId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemCatId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ItemCatDesc"/>
+      <Item Value="ItemCatId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVItemMasterUomId"
+    ListVOName="ItemMasterUomLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UomId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="UomId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="UomName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVItemMasterMachineId"
+    ListVOName="ItemMasterMachineLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MachineId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MachineId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MachineName"/>
+      <Item Value="MachineId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVItemMasterBrand"
+    ListVOName="ItemMasterBrandLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Brand"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="BrandVO"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="BrandVO"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVItemMasterInventoryType"
+    ListVOName="ItemMasterStockServiceLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="InventoryType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InventoryType"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InventoryType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVItemMasterActive"
+    ListVOName="ItemMasterActiveYesNoLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Active"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CHKBoxActiveYesNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CHKBoxActiveYesNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVItemMasterSizeIdLov"
+    ListVOName="ItemMasterSizesVOLov"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SizeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SizeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SizeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOVItemMasterColorIdLov"
+    ListVOName="ItemMasterColorsVOLOV"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ColorId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ColorId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ColorName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="ItemMasterEO"
+    Entity="STP.model.eo.ItemMasterEO"/>
+  <ViewAttribute
+    Name="ItemId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemId"
+    EntityUsage="ItemMasterEO"
+    AliasName="ITEM_ID"/>
+  <ViewAttribute
+    Name="ItemTypeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemTypeId"
+    EntityUsage="ItemMasterEO"
+    AliasName="ITEM_TYPE_ID"
+    LOVName="LOVItemMasterItemTypeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ItemNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemNo"
+    EntityUsage="ItemMasterEO"
+    AliasName="ITEM_NO"/>
+  <ViewAttribute
+    Name="ItemCatId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemCatId"
+    EntityUsage="ItemMasterEO"
+    AliasName="ITEM_CAT_ID"
+    LOVName="LOVItemMasterItemCatId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ItemDescription"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemDescription"
+    EntityUsage="ItemMasterEO"
+    AliasName="ITEM_DESCRIPTION"/>
+  <ViewAttribute
+    Name="UomId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UomId"
+    EntityUsage="ItemMasterEO"
+    AliasName="UOM_ID"
+    LOVName="LOVItemMasterUomId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SizeId"
+    PrecisionRule="true"
+    EntityAttrName="SizeId"
+    EntityUsage="ItemMasterEO"
+    AliasName="SIZE_ID"
+    LOVName="LOVItemMasterSizeIdLov">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ColorId"
+    PrecisionRule="true"
+    EntityAttrName="ColorId"
+    EntityUsage="ItemMasterEO"
+    AliasName="COLOR_ID"
+    LOVName="LOVItemMasterColorIdLov">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ParentId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ParentId"
+    EntityUsage="ItemMasterEO"
+    AliasName="PARENT_ID"/>
+  <ViewAttribute
+    Name="MachineId"
+    PrecisionRule="true"
+    EntityAttrName="MachineId"
+    EntityUsage="ItemMasterEO"
+    AliasName="MACHINE_ID"
+    LOVName="LOVItemMasterMachineId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OldItemId"
+    PrecisionRule="true"
+    EntityAttrName="OldItemId"
+    EntityUsage="ItemMasterEO"
+    AliasName="OLD_ITEM_ID"/>
+  <ViewAttribute
+    Name="Brand"
+    PrecisionRule="true"
+    EntityAttrName="Brand"
+    EntityUsage="ItemMasterEO"
+    AliasName="BRAND"
+    LOVName="LOVItemMasterBrand">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InventoryType"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="InventoryType"
+    EntityUsage="ItemMasterEO"
+    AliasName="INVENTORY_TYPE"
+    LOVName="LOVItemMasterInventoryType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MinStock"
+    PrecisionRule="true"
+    EntityAttrName="MinStock"
+    EntityUsage="ItemMasterEO"
+    AliasName="MIN_STOCK"/>
+  <ViewAttribute
+    Name="MaxStock"
+    PrecisionRule="true"
+    EntityAttrName="MaxStock"
+    EntityUsage="ItemMasterEO"
+    AliasName="MAX_STOCK"/>
+  <ViewAttribute
+    Name="RackNo"
+    PrecisionRule="true"
+    EntityAttrName="RackNo"
+    EntityUsage="ItemMasterEO"
+    AliasName="RACK_NO"/>
+  <ViewAttribute
+    Name="CabnitNo"
+    PrecisionRule="true"
+    EntityAttrName="CabnitNo"
+    EntityUsage="ItemMasterEO"
+    AliasName="CABNIT_NO"/>
+  <ViewAttribute
+    Name="ItemLife"
+    PrecisionRule="true"
+    EntityAttrName="ItemLife"
+    EntityUsage="ItemMasterEO"
+    AliasName="ITEM_LIFE"/>
+  <ViewAttribute
+    Name="Active"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Active"
+    EntityUsage="ItemMasterEO"
+    AliasName="ACTIVE"
+    LOVName="LOVItemMasterActive">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="check_box"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EnteredBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EnteredBy"
+    EntityUsage="ItemMasterEO"
+    AliasName="ENTERED_BY"/>
+  <ViewAttribute
+    Name="EnteredOn"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EnteredOn"
+    EntityUsage="ItemMasterEO"
+    AliasName="ENTERED_ON"/>
+  <ViewAttribute
+    Name="LastEditedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastEditedBy"
+    EntityUsage="ItemMasterEO"
+    AliasName="LAST_EDITED_BY"/>
+  <ViewAttribute
+    Name="LastEditedOn"
+    PrecisionRule="true"
+    EntityAttrName="LastEditedOn"
+    EntityUsage="ItemMasterEO"
+    AliasName="LAST_EDITED_ON"/>
+  <ViewLinkAccessor
+    Name="FabDetailVO"
+    ViewLink="STP.model.vol.Fk2FabDetailLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

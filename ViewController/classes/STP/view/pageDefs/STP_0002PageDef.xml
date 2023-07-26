@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0002PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DesignVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="DesignVO1Iterator"/>
+    <searchRegion Binds="DesignVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="DesignVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DesignVO1Iterator" id="DesignId">
+      <AttrNames>
+        <Item Value="DesignId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DesignVO1Iterator" id="DesignName">
+      <AttrNames>
+        <Item Value="DesignName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DesignVO1Iterator" id="DesignDetail">
+      <AttrNames>
+        <Item Value="DesignDetail"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="DesignVO1Iterator" StaticList="false" Uses="LOVDesignActive" id="Active" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="DesignVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DesignVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DesignVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DesignVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DesignVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DesignVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="DesignVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="DesignVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <tree IterBinding="DesignVO1Iterator" id="DesignVO1">
+      <nodeDefinition DefName="STP.model.vo.DesignVO" Name="DesignVO10">
+        <AttrNames>
+          <Item Value="DesignId"/>
+          <Item Value="DesignName"/>
+          <Item Value="DesignDetail"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

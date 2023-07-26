@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0013PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BpMasterVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="BpMasterVO1Iterator"/>
+    <searchRegion Binds="BpMasterVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="BpMasterVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="BpId">
+      <AttrNames>
+        <Item Value="BpId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="BpMasterVO1Iterator" StaticList="false" Uses="LOVBPMasterBpfId" id="BpfId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="BpNo">
+      <AttrNames>
+        <Item Value="BpNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="OldId">
+      <AttrNames>
+        <Item Value="OldId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="AcId">
+      <AttrNames>
+        <Item Value="AcId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="ContactNo">
+      <AttrNames>
+        <Item Value="ContactNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="RefNo">
+      <AttrNames>
+        <Item Value="RefNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="Brand">
+      <AttrNames>
+        <Item Value="Brand"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="EmailNo">
+      <AttrNames>
+        <Item Value="EmailNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="Ntn">
+      <AttrNames>
+        <Item Value="Ntn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="Address1">
+      <AttrNames>
+        <Item Value="Address1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="Address2">
+      <AttrNames>
+        <Item Value="Address2"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="BpMasterVO1Iterator" StaticList="false" Uses="LOVBPMasterActive" id="Active"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpMasterVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="BpMasterVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="BpMasterVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="BpMasterVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="BpMasterVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="BpMasterVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BpMasterVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <tree IterBinding="BpMasterVO1Iterator" id="BpMasterVO1">
+      <nodeDefinition DefName="STP.model.vo.BpMasterVO" Name="BpMasterVO10">
+        <AttrNames>
+          <Item Value="BpId"/>
+          <Item Value="BpfId"/>
+          <Item Value="BpNo"/>
+          <Item Value="Name"/>
+          <Item Value="OldId"/>
+          <Item Value="AcId"/>
+          <Item Value="ContactNo"/>
+          <Item Value="RefNo"/>
+          <Item Value="Brand"/>
+          <Item Value="EmailNo"/>
+          <Item Value="Ntn"/>
+          <Item Value="Address1"/>
+          <Item Value="Address2"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

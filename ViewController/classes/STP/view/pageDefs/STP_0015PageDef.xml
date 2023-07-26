@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0015PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ContractorVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl"
+              id="ContractorVO1Iterator"/>
+    <searchRegion Binds="ContractorVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ContractorVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ContractorVO1Iterator" id="ContractorId">
+      <AttrNames>
+        <Item Value="ContractorId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ContractorVO1Iterator" StaticList="false" Uses="LovLocationId" id="LocationId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ContractorVO1Iterator" StaticList="false" Uses="LOVContractorTypeId" id="ContractorTypeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ContractorVO1Iterator" id="ContractorName">
+      <AttrNames>
+        <Item Value="ContractorName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContractorVO1Iterator" id="Cnic">
+      <AttrNames>
+        <Item Value="Cnic"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContractorVO1Iterator" id="ContactNo">
+      <AttrNames>
+        <Item Value="ContactNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContractorVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContractorVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ContractorVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ContractorVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ContractorVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ContractorVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <button IterBinding="ContractorVO1Iterator" StaticList="false" Uses="LOVContractorActive" id="Active1"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <action IterBinding="ContractorVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="ContractorVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <tree IterBinding="ContractorVO1Iterator" id="ContractorVO1">
+      <nodeDefinition DefName="STP.model.vo.ContractorVO" Name="ContractorVO10">
+        <AttrNames>
+          <Item Value="ContractorId"/>
+          <Item Value="LocationId"/>
+          <Item Value="ContractorTypeId"/>
+          <Item Value="ContractorName"/>
+          <Item Value="Cnic"/>
+          <Item Value="ContactNo"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

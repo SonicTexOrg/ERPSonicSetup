@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0017PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PrintMasterVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl"
+              id="PrintMasterVO1Iterator"/>
+    <searchRegion Binds="PrintMasterVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PrintMasterVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PrintMasterVO1Iterator" id="PrintId">
+      <AttrNames>
+        <Item Value="PrintId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrintMasterVO1Iterator" id="PrintName">
+      <AttrNames>
+        <Item Value="PrintName"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="PrintMasterVO1Iterator" StaticList="false" Uses="LOVPrintMasterActive" id="Active"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="PrintMasterVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PrintMasterVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="PrintMasterVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="PrintMasterVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="PrintMasterVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="PrintMasterVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="PrintMasterVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="PrintMasterVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <tree IterBinding="PrintMasterVO1Iterator" id="PrintMasterVO1">
+      <nodeDefinition DefName="STP.model.vo.PrintMasterVO" Name="PrintMasterVO10">
+        <AttrNames>
+          <Item Value="PrintId"/>
+          <Item Value="PrintName"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

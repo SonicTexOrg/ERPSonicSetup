@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0004PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FabTypeVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="FabTypeVO1Iterator"/>
+    <searchRegion Binds="FabTypeVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="FabTypeVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="FabTypeVO1Iterator" id="FabTypeId">
+      <AttrNames>
+        <Item Value="FabTypeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FabTypeVO1Iterator" id="FabTypeName">
+      <AttrNames>
+        <Item Value="FabTypeName"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="FabTypeVO1Iterator" StaticList="false" Uses="LOVFabTypeActive" id="Active"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="FabTypeVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FabTypeVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="FabTypeVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="FabTypeVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="FabTypeVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="FabTypeVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="FabTypeVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="FabTypeVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <tree IterBinding="FabTypeVO1Iterator" id="FabTypeVO1">
+      <nodeDefinition DefName="STP.model.vo.FabTypeVO" Name="FabTypeVO10">
+        <AttrNames>
+          <Item Value="FabTypeId"/>
+          <Item Value="FabTypeName"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

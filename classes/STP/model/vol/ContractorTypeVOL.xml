@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ContractorTypeVOL"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="STP.model.vol.ContractorTypeVOL_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="ContractorTypeVO"
+    Cardinality="1"
+    Source="true"
+    Owner="STP.model.vo.ContractorTypeVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ContractorTypeVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.vo.ContractorTypeVO.ContractorTypeId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ContractorVO"
+    Cardinality="-1"
+    Owner="STP.model.vo.ContractorVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ContractorVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.vo.ContractorVO.ContractorTypeId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="STP.model.ERPSonicSTPModuleBundle"/>
+  </ResourceBundle>
+</ViewLink>

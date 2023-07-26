@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ItemTypeEO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ITEM_TYPE"
+  AliasName="ItemTypeEO"
+  BindingStyle="OracleName"
+  RowClass="STP.model.eo.ItemTypeEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ItemTypeId"
+    IsNotNull="true"
+    ColumnName="ITEM_TYPE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ITEM_TYPE"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ItemTypePrefix"
+    IsUnique="true"
+    Precision="3"
+    ColumnName="ITEM_TYPE_PREFIX"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ITEM_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STP.model.eo.ItemTypeEO.ItemTypePrefix_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ItemTypeDesc"
+    Precision="30"
+    ColumnName="ITEM_TYPE_DESC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ITEM_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STP.model.eo.ItemTypeEO.ItemTypeDesc_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Active"
+    Precision="1"
+    ColumnName="ACTIVE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ITEM_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EnteredBy"
+    ColumnName="ENTERED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ITEM_TYPE"/>
+  <Attribute
+    Name="EnteredOn"
+    ColumnName="ENTERED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ITEM_TYPE"/>
+  <Attribute
+    Name="LastEditedBy"
+    ColumnName="LAST_EDITED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ITEM_TYPE"/>
+  <Attribute
+    Name="LastEditedOn"
+    ColumnName="LAST_EDITED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="ITEM_TYPE"/>
+  <AccessorAttribute
+    Name="ItemMasterEO"
+    Association="STP.model.asso.Fk2ItemMasterAssoc"
+    AssociationEnd="STP.model.asso.Fk2ItemMasterAssoc.ItemMasterEO"
+    AssociationOtherEnd="STP.model.asso.Fk2ItemMasterAssoc.ItemTypeEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkItemType"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_ITEM_TYPE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.eo.ItemTypeEO.ItemTypeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UnqItemType">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="UNQ_ITEM_TYPE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="STP.model.eo.ItemTypeEO.ItemTypePrefix"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="STP.model.ERPSonicSTPModuleBundle"/>
+  </ResourceBundle>
+</Entity>

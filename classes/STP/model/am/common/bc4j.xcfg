@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="STP.model.am.AppModule"/>
+   <AppModuleConfigBag ApplicationName="STP.model.am.ERPSonicSetupAppModule">
+      <AppModuleConfig DeployPlatform="LOCAL" name="ERPSonicSetupAppModuleLocal" ApplicationName="STP.model.am.ERPSonicSetupAppModule" jbo.project="STP.model.ERPSonicSTPModule" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="STP.model.am.ERPSonicSetupAppModule"/>
+         <Custom ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="java:comp/env/jdbc/ERPSonicSetupConnDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig jbo.project="STP.model.ERPSonicSTPModule" ApplicationName="STP.model.am.ERPSonicSetupAppModule" DeployPlatform="LOCAL" name="ERPSonicSetupAppModuleShared" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
+         <AM-Pooling jbo.ampool.isuseexclusive="false" jbo.ampool.resetnontransactionalstate="false" jbo.ampool.dynamicjdbccredentials="false" jbo.ampool.maxpoolsize="1"/>
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="STP.model.am.ERPSonicSetupAppModule"/>
+         <Custom ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="java:comp/env/jdbc/ERPSonicSetupConnDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

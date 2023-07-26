@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="STP_0015.jsf" id="d1" inlineStyle="background-color:Teal;" theme="dark">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelHeader text="Contractor Master Setup" id="ph1" inlineStyle="height:567px;">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+                <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="254">
+                    <f:facet name="first">
+                        <af:panelBox text="Contractor Setup" id="pb1">
+                            <f:facet name="toolbar">
+                                <af:toolbar id="t1">
+                                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="New"
+                                               disabled="#{!bindings.CreateInsert.enabled}" id="b5"/>
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b7"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b8">
+                                        <af:resetActionListener/>
+                                    </af:button>
+                                    <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                               disabled="#{!bindings.Delete.enabled}" id="b6"/>
+                                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b1"/>
+                                    <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                               disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                                               disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b3"/>
+                                </af:toolbar>
+                            </f:facet>
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.ContractorId.inputValue}"
+                                              label="#{bindings.ContractorId.hints.label}"
+                                              required="#{bindings.ContractorId.hints.mandatory}"
+                                              columns="#{bindings.ContractorId.hints.displayWidth}"
+                                              maximumLength="#{bindings.ContractorId.hints.precision}"
+                                              shortDesc="#{bindings.ContractorId.hints.tooltip}" id="it1"
+                                              disabled="true">
+                                    <f:validator binding="#{bindings.ContractorId.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.ContractorId.format}"/>
+                                </af:inputText>
+                                <af:selectOneChoice value="#{bindings.LocationId.inputValue}"
+                                                    label="#{bindings.LocationId.label}"
+                                                    required="#{bindings.LocationId.hints.mandatory}"
+                                                    shortDesc="#{bindings.LocationId.hints.tooltip}" id="soc2">
+                                    <f:selectItems value="#{bindings.LocationId.items}" id="si2"/>
+                                    <f:validator binding="#{bindings.LocationId.validator}"/>
+                                </af:selectOneChoice>
+                                <af:selectOneChoice value="#{bindings.ContractorTypeId.inputValue}"
+                                                    label="#{bindings.ContractorTypeId.label}"
+                                                    required="#{bindings.ContractorTypeId.hints.mandatory}"
+                                                    shortDesc="#{bindings.ContractorTypeId.hints.tooltip}" id="soc1">
+                                    <f:selectItems value="#{bindings.ContractorTypeId.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.ContractorTypeId.validator}"/>
+                                </af:selectOneChoice>
+                                <af:inputText value="#{bindings.ContractorName.inputValue}"
+                                              label="#{bindings.ContractorName.hints.label}"
+                                              required="#{bindings.ContractorName.hints.mandatory}"
+                                              columns="#{bindings.ContractorName.hints.displayWidth}"
+                                              maximumLength="#{bindings.ContractorName.hints.precision}"
+                                              shortDesc="#{bindings.ContractorName.hints.tooltip}" id="it2">
+                                    <f:validator binding="#{bindings.ContractorName.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Cnic.inputValue}" label="#{bindings.Cnic.hints.label}"
+                                              required="#{bindings.Cnic.hints.mandatory}"
+                                              columns="#{bindings.Cnic.hints.displayWidth}"
+                                              maximumLength="#{bindings.Cnic.hints.precision}"
+                                              shortDesc="#{bindings.Cnic.hints.tooltip}" id="it3">
+                                    <f:validator binding="#{bindings.Cnic.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.ContactNo.inputValue}"
+                                              label="#{bindings.ContactNo.hints.label}"
+                                              required="#{bindings.ContactNo.hints.mandatory}"
+                                              columns="#{bindings.ContactNo.hints.displayWidth}"
+                                              maximumLength="#{bindings.ContactNo.hints.precision}"
+                                              shortDesc="#{bindings.ContactNo.hints.tooltip}" id="it4">
+                                    <f:validator binding="#{bindings.ContactNo.validator}"/>
+                                </af:inputText>
+                                <af:selectBooleanCheckbox value="#{bindings.Active1.inputValue}"
+                                                          label="#{bindings.Active1.label}"
+                                                          shortDesc="#{bindings.Active1.hints.tooltip}" id="sbc1"/>
+                                <af:inputText value="#{bindings.EnteredBy.inputValue}"
+                                              label="#{bindings.EnteredBy.hints.label}"
+                                              required="#{bindings.EnteredBy.hints.mandatory}"
+                                              columns="#{bindings.EnteredBy.hints.displayWidth}"
+                                              maximumLength="#{bindings.EnteredBy.hints.precision}"
+                                              shortDesc="#{bindings.EnteredBy.hints.tooltip}" id="it6">
+                                    <f:validator binding="#{bindings.EnteredBy.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EnteredBy.format}"/>
+                                </af:inputText>
+                                <af:inputDate value="#{bindings.EnteredOn.inputValue}"
+                                              label="#{bindings.EnteredOn.hints.label}"
+                                              required="#{bindings.EnteredOn.hints.mandatory}"
+                                              columns="#{bindings.EnteredOn.hints.displayWidth}"
+                                              shortDesc="#{bindings.EnteredOn.hints.tooltip}" id="id1">
+                                    <f:validator binding="#{bindings.EnteredOn.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.EnteredOn.format}"/>
+                                </af:inputDate>
+                                <f:facet name="footer"/>
+                            </af:panelFormLayout>
+                        </af:panelBox>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="statusbar"/>
+                            <af:table value="#{bindings.ContractorVO1.collectionModel}" var="row"
+                                      rows="#{bindings.ContractorVO1.rangeSize}"
+                                      emptyText="#{bindings.ContractorVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.ContractorVO1.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.ContractorVO1.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.ContractorVO1.rangeSize}"
+                                      filterModel="#{bindings.ContractorVO1Query.queryDescriptor}"
+                                      queryListener="#{bindings.ContractorVO1Query.processQuery}" filterVisible="true"
+                                      varStatus="vs" id="t2"
+                                      partialTriggers="::b5 ::b6 ::b4 ::b1 ::b2 ::b3 :::b5 :::b6 :::b4 :::b1 :::b2 :::b3"
+                                      inlineStyle="height:157px;">
+                                <af:column sortProperty="#{bindings.ContractorVO1.hints.ContractorId.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ContractorVO1.hints.ContractorId.label}" id="c1">
+                                    <af:outputText value="#{row.ContractorId}"
+                                                   shortDesc="#{bindings.ContractorVO1.hints.ContractorId.tooltip}"
+                                                   id="ot1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ContractorVO1.hints.ContractorId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ContractorVO1.hints.LocationId.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ContractorVO1.hints.LocationId.label}" id="c2">
+                                    <af:selectOneChoice value="#{row.bindings.LocationId.inputValue}"
+                                                        label="#{row.bindings.LocationId.label}"
+                                                        required="#{bindings.ContractorVO1.hints.LocationId.mandatory}"
+                                                        shortDesc="#{bindings.ContractorVO1.hints.LocationId.tooltip}"
+                                                        readOnly="true" id="soc3">
+                                        <f:selectItems value="#{row.bindings.LocationId.items}" id="si3"/>
+                                        <f:validator binding="#{row.bindings.LocationId.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ContractorVO1.hints.ContractorTypeId.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ContractorVO1.hints.ContractorTypeId.label}" id="c3">
+                                    <af:selectOneChoice value="#{row.bindings.ContractorTypeId.inputValue}"
+                                                        label="#{row.bindings.ContractorTypeId.label}"
+                                                        required="#{bindings.ContractorVO1.hints.ContractorTypeId.mandatory}"
+                                                        shortDesc="#{bindings.ContractorVO1.hints.ContractorTypeId.tooltip}"
+                                                        readOnly="true" id="soc4">
+                                        <f:selectItems value="#{row.bindings.ContractorTypeId.items}" id="si4"/>
+                                        <f:validator binding="#{row.bindings.ContractorTypeId.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ContractorVO1.hints.ContractorName.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ContractorVO1.hints.ContractorName.label}" id="c4">
+                                    <af:outputText value="#{row.ContractorName}"
+                                                   shortDesc="#{bindings.ContractorVO1.hints.ContractorName.tooltip}"
+                                                   id="ot2"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ContractorVO1.hints.Cnic.name}" filterable="true"
+                                           sortable="true" headerText="#{bindings.ContractorVO1.hints.Cnic.label}"
+                                           id="c5">
+                                    <af:outputText value="#{row.Cnic}"
+                                                   shortDesc="#{bindings.ContractorVO1.hints.Cnic.tooltip}" id="ot3"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ContractorVO1.hints.ContactNo.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ContractorVO1.hints.ContactNo.label}" id="c6">
+                                    <af:outputText value="#{row.ContactNo}"
+                                                   shortDesc="#{bindings.ContractorVO1.hints.ContactNo.tooltip}"
+                                                   id="ot4"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ContractorVO1.hints.Active.name}" filterable="true"
+                                           sortable="true" headerText="#{bindings.ContractorVO1.hints.Active.label}"
+                                           id="c7">
+                                    <af:selectOneChoice value="#{row.bindings.Active.inputValue}"
+                                                        label="#{row.bindings.Active.label}"
+                                                        required="#{bindings.ContractorVO1.hints.Active.mandatory}"
+                                                        shortDesc="#{bindings.ContractorVO1.hints.Active.tooltip}"
+                                                        readOnly="true" id="soc5">
+                                        <f:selectItems value="#{row.bindings.Active.items}" id="si5"/>
+                                        <f:validator binding="#{row.bindings.Active.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ContractorVO1.hints.EnteredBy.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ContractorVO1.hints.EnteredBy.label}" id="c8">
+                                    <af:outputText value="#{row.EnteredBy}"
+                                                   shortDesc="#{bindings.ContractorVO1.hints.EnteredBy.tooltip}"
+                                                   id="ot5">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ContractorVO1.hints.EnteredBy.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ContractorVO1.hints.EnteredOn.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ContractorVO1.hints.EnteredOn.label}" id="c9">
+                                    <af:outputText value="#{row.EnteredOn}"
+                                                   shortDesc="#{bindings.ContractorVO1.hints.EnteredOn.tooltip}"
+                                                   id="ot6">
+                                        <af:convertDateTime pattern="#{bindings.ContractorVO1.hints.EnteredOn.format}"/>
+                                    </af:outputText>
+                                    <f:facet name="filter">
+                                        <af:inputDate value="#{bindings.ContractorVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EnteredOn.value}"
+                                                      id="id2">
+                                            <af:convertDateTime pattern="#{bindings.ContractorVO1.hints.EnteredOn.format}"/>
+                                        </af:inputDate>
+                                    </f:facet>
+                                </af:column>
+                            </af:table>
+                        </af:panelCollection>
+                    </f:facet>
+                </af:panelSplitter>
+            </af:panelHeader>
+        </af:form>
+    </af:document>
+</f:view>

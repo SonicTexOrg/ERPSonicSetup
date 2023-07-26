@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0016PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ContractorTypeVO2" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl"
+              id="ContractorTypeVO2Iterator"/>
+    <iterator Binds="ContractorVO2" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl"
+              id="ContractorVO2Iterator"/>
+    <searchRegion Binds="ContractorVO2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ContractorVO21Query"/>
+    <iterator Binds="DiaVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="DiaVO1Iterator"/>
+    <searchRegion Binds="DiaVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="DiaVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ContractorTypeVO2Iterator" id="ContractorTypeVO2">
+      <nodeDefinition DefName="STP.model.vo.ContractorTypeVO" Name="ContractorTypeVO20">
+        <AttrNames>
+          <Item Value="ContractorType"/>
+          <Item Value="ContractorTypeId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ContractorVO2Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="ContractorVO2Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <tree IterBinding="ContractorVO2Iterator" id="ContractorVO2">
+      <nodeDefinition DefName="STP.model.vo.ContractorVO" Name="ContractorVO20">
+        <AttrNames>
+          <Item Value="ContractorId"/>
+          <Item Value="LocationId"/>
+          <Item Value="ContractorTypeId"/>
+          <Item Value="ContractorName"/>
+          <Item Value="Cnic"/>
+          <Item Value="ContactNo"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ContractorTypeVO2Iterator" id="ContractorTypeVO21">
+      <nodeDefinition DefName="STP.model.vo.ContractorTypeVO" Name="ContractorTypeVO210">
+        <AttrNames>
+          <Item Value="ContractorType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ContractorVO2Iterator" id="ContractorId">
+      <AttrNames>
+        <Item Value="ContractorId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ContractorVO2Iterator" StaticList="false" Uses="LovLocationId" id="LocationId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ContractorVO2Iterator" StaticList="false" Uses="LOVContractorTypeId" id="ContractorTypeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ContractorVO2Iterator" id="ContractorName">
+      <AttrNames>
+        <Item Value="ContractorName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContractorVO2Iterator" id="Cnic">
+      <AttrNames>
+        <Item Value="Cnic"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContractorVO2Iterator" id="ContactNo">
+      <AttrNames>
+        <Item Value="ContactNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ContractorVO2Iterator" StaticList="false" Uses="LOVContractorActive" id="Active"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ContractorVO2Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ContractorVO2Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ContractorVO2Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ContractorVO2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ContractorVO2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ContractorVO2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="ContractorVO2Iterator" id="ContractorVO21">
+      <nodeDefinition DefName="STP.model.vo.ContractorVO" Name="ContractorVO210">
+        <AttrNames>
+          <Item Value="ContractorId"/>
+          <Item Value="LocationId"/>
+          <Item Value="ContractorTypeId"/>
+          <Item Value="ContractorName"/>
+          <Item Value="Cnic"/>
+          <Item Value="ContactNo"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+          <Item Value="LastEditedBy"/>
+          <Item Value="LastEditedOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ContractorTypeVO2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <attributeValues IterBinding="DiaVO1Iterator" id="DiaId">
+      <AttrNames>
+        <Item Value="DiaId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DiaVO1Iterator" id="DiaName">
+      <AttrNames>
+        <Item Value="DiaName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DiaVO1Iterator" id="DiaDetail">
+      <AttrNames>
+        <Item Value="DiaDetail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DiaVO1Iterator" id="EnteredBy1">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DiaVO1Iterator" id="EnteredOn1">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DiaVO1Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DiaVO1Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DiaVO1Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DiaVO1Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="DiaVO1Iterator" id="DiaVO1">
+      <nodeDefinition DefName="STP.model.vo.DiaVO" Name="DiaVO10">
+        <AttrNames>
+          <Item Value="DiaId"/>
+          <Item Value="DiaName"/>
+          <Item Value="DiaDetail"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="DiaVO1Iterator" id="DiaVO11">
+      <nodeDefinition DefName="STP.model.vo.DiaVO" Name="DiaVO110">
+        <AttrNames>
+          <Item Value="DiaId"/>
+          <Item Value="DiaName"/>
+          <Item Value="DiaDetail"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="DiaVO1Iterator" id="CreateInsert2" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="DiaVO1Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <button IterBinding="DiaVO1Iterator" StaticList="false" Uses="LOVDiaActive" id="Active1" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+  </bindings>
+</pageDefinition>

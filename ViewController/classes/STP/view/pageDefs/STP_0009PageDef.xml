@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0009PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ItemMasterVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="ItemMasterVO1Iterator"/>
+    <searchRegion Binds="ItemMasterVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ItemMasterVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="ItemId">
+      <AttrNames>
+        <Item Value="ItemId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="ItemNo">
+      <AttrNames>
+        <Item Value="ItemNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterItemCatId" id="ItemCatId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="ItemDescription">
+      <AttrNames>
+        <Item Value="ItemDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterUomId" id="UomId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="ParentId">
+      <AttrNames>
+        <Item Value="ParentId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterMachineId" id="MachineId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="OldItemId">
+      <AttrNames>
+        <Item Value="OldItemId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterBrand" id="Brand"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterInventoryType" id="InventoryType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="MinStock">
+      <AttrNames>
+        <Item Value="MinStock"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="MaxStock">
+      <AttrNames>
+        <Item Value="MaxStock"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="RackNo">
+      <AttrNames>
+        <Item Value="RackNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="CabnitNo">
+      <AttrNames>
+        <Item Value="CabnitNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="ItemLife">
+      <AttrNames>
+        <Item Value="ItemLife"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ItemMasterVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ItemMasterVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ItemMasterVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ItemMasterVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ItemMasterVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="ItemMasterVO1Iterator" id="ItemMasterVO1">
+      <nodeDefinition DefName="STP.model.vo.ItemMasterVO" Name="ItemMasterVO10">
+        <AttrNames>
+          <Item Value="ItemId"/>
+          <Item Value="ItemTypeId"/>
+          <Item Value="ItemNo"/>
+          <Item Value="ItemCatId"/>
+          <Item Value="ItemDescription"/>
+          <Item Value="UomId"/>
+          <Item Value="SizeId"/>
+          <Item Value="ColorId"/>
+          <Item Value="ParentId"/>
+          <Item Value="MachineId"/>
+          <Item Value="OldItemId"/>
+          <Item Value="Brand"/>
+          <Item Value="InventoryType"/>
+          <Item Value="MinStock"/>
+          <Item Value="MaxStock"/>
+          <Item Value="RackNo"/>
+          <Item Value="CabnitNo"/>
+          <Item Value="ItemLife"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+          <Item Value="LastEditedBy"/>
+          <Item Value="LastEditedOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ItemMasterVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="ItemMasterVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <list IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterItemTypeId" id="ItemTypeId1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <button IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterActive" id="Active1"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <list IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterSizeIdLov" id="SizeId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ItemMasterVO1Iterator" StaticList="false" Uses="LOVItemMasterColorIdLov" id="ColorId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="STP_0012PageDef"
+                Package="STP.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BpFrefixVO1" RangeSize="25" DataControl="ERPSonicSetupAppModuleDataControl" id="BpFrefixVO1Iterator"/>
+    <searchRegion Binds="BpFrefixVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="BpFrefixVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="BpFrefixVO1Iterator" id="BpfId">
+      <AttrNames>
+        <Item Value="BpfId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpFrefixVO1Iterator" id="BpfPrefix">
+      <AttrNames>
+        <Item Value="BpfPrefix"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpFrefixVO1Iterator" id="BpfDesc">
+      <AttrNames>
+        <Item Value="BpfDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpFrefixVO1Iterator" id="BpfDetail">
+      <AttrNames>
+        <Item Value="BpfDetail"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="BpFrefixVO1Iterator" StaticList="false" Uses="LOVBpPrefixActive" id="Active"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Active"/>
+      </AttrNames>
+    </button>
+    <attributeValues IterBinding="BpFrefixVO1Iterator" id="EnteredBy">
+      <AttrNames>
+        <Item Value="EnteredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BpFrefixVO1Iterator" id="EnteredOn">
+      <AttrNames>
+        <Item Value="EnteredOn"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="BpFrefixVO1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="BpFrefixVO1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="BpFrefixVO1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="BpFrefixVO1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="BpFrefixVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BpFrefixVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="ERPSonicSetupAppModuleDataControl"/>
+    <tree IterBinding="BpFrefixVO1Iterator" id="BpFrefixVO1">
+      <nodeDefinition DefName="STP.model.vo.BpFrefixVO" Name="BpFrefixVO10">
+        <AttrNames>
+          <Item Value="BpfId"/>
+          <Item Value="BpfPrefix"/>
+          <Item Value="BpfDesc"/>
+          <Item Value="BpfDetail"/>
+          <Item Value="Active"/>
+          <Item Value="EnteredBy"/>
+          <Item Value="EnteredOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

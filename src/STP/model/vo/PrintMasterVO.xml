@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PrintMasterVO"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="STP.model.vo.PrintMasterVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="PrintMasterActiveYesNoLOV"
+    ViewObjectName="STP.model.lov.ActiveYesNoLOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOVPrintMasterActive"
+    ListVOName="PrintMasterActiveYesNoLOV"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Active"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CHKBoxActiveYesNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CHKBoxActiveYesNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="PrintMasterEO"
+    Entity="STP.model.eo.PrintMasterEO"/>
+  <ViewAttribute
+    Name="PrintId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PrintId"
+    EntityUsage="PrintMasterEO"
+    AliasName="PRINT_ID"/>
+  <ViewAttribute
+    Name="PrintName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PrintName"
+    EntityUsage="PrintMasterEO"
+    AliasName="PRINT_NAME"/>
+  <ViewAttribute
+    Name="Active"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Active"
+    EntityUsage="PrintMasterEO"
+    AliasName="ACTIVE"
+    LOVName="LOVPrintMasterActive">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="check_box"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EnteredBy"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EnteredBy"
+    EntityUsage="PrintMasterEO"
+    AliasName="ENTERED_BY"/>
+  <ViewAttribute
+    Name="EnteredOn"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EnteredOn"
+    EntityUsage="PrintMasterEO"
+    AliasName="ENTERED_ON"/>
+  <ViewAttribute
+    Name="LastEditedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastEditedBy"
+    EntityUsage="PrintMasterEO"
+    AliasName="LAST_EDITED_BY"/>
+  <ViewAttribute
+    Name="LastEditedOn"
+    PrecisionRule="true"
+    EntityAttrName="LastEditedOn"
+    EntityUsage="PrintMasterEO"
+    AliasName="LAST_EDITED_ON"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="STP.model.ERPSonicSTPModuleBundle"/>
+  </ResourceBundle>
+</ViewObject>
